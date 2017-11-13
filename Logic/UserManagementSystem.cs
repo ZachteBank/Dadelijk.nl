@@ -24,7 +24,7 @@ namespace Logic
 
         private string HashPassword(string password)
         {
-            //TODO: Make this method
+            //TODO: Make this method wauw tering zeg wtf
             return password;
         }
     }
