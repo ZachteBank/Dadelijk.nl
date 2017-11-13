@@ -1,0 +1,73 @@
+﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+
+    <title>@ViewData["Title"] - Dadelijk.nl</title>
+
+    <environment names="Development,Staging,Production">
+        <!-- Bootstrap -->
+        <link href="@Url.Content("~/lib/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css")" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="@Url.Content("~/lib/gentelella/vendors/font-awesome/css/font-awesome.min.css")" rel="stylesheet">
+        <!-- NProgress -->
+        <link href="@Url.Content("~/lib/gentelella/vendors/nprogress/nprogress.css")" rel="stylesheet">
+        <!-- iCheck -->
+        <link href="@Url.Content("~/lib/gentelella/vendors/iCheck/skins/flat/green.css")" rel="stylesheet">
+
+        <!-- bootstrap-progressbar -->
+        <link href="@Url.Content("~/lib/gentelella/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css")" rel="stylesheet">
+        <!-- JQVMap -->
+        <link href="@Url.Content("~/lib/gentelella/vendors/jqvmap/dist/jqvmap.min.css")" rel="stylesheet" />
+        <!-- bootstrap-daterangepicker -->
+        <link href="@Url.Content("~/lib/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.css")" rel="stylesheet">
+
+        <!-- Custom Theme Style -->
+        <link href="@Url.Content("~/lib/gentelella/build/css/custom.min.css")" rel="stylesheet">
+
+        @RenderSection("Head", required: false)
+
+    </environment>
+
+    @Html.Raw(JavaScriptSnippet.FullScript)
+</head>
+<body class="@ViewBag.BodyCssClass">
+
+@RenderSection("Body", true)
+
+
+
+<environment names="Development,Staging,Production">
+    <!-- jQuery -->
+    <script src="@Url.Content("~/lib/gentelella/vendors/jquery/dist/jquery.min.js")"></script>
+    <!-- Bootstrap -->
+    <script src="@Url.Content("~/lib/gentelella/vendors/bootstrap/dist/js/bootstrap.min.js")"></script>
+    <!-- FastClick -->
+    <script src="@Url.Content("~/lib/gentelella/vendors/fastclick/lib/fastclick.js")"></script>
+    <!-- NProgress -->
+    <script src="@Url.Content("~/lib/gentelella/vendors/nprogress/nprogress.js")"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="@Url.Content("~/lib/gentelella/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js")"></script>
+    <!-- iCheck -->
+    <script src="@Url.Content("~/lib/gentelella/vendors/iCheck/icheck.min.js")"></script>
+    <!-- Skycons -->
+    <script src="@Url.Content("~/lib/gentelella/vendors/skycons/skycons.js")"></script>
+    <!-- DateJS -->
+    <script src="@Url.Content("~/lib/gentelella/vendors/DateJS/build/date.js")"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="@Url.Content("~/lib/gentelella/vendors/moment/min/moment.min.js")"></script>
+    <script src="@Url.Content("~/lib/gentelella/vendors/bootstrap-daterangepicker/daterangepicker.js")"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="@Url.Content("~/lib/gentelella/build/js/custom.min.js")"></script>
+
+    @RenderSection("Scripts", required: false)
+</environment>
+</body>
+</html>

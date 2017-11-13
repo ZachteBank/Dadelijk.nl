@@ -24,11 +24,15 @@ namespace Dadelijk.nl
 
         public IConfigurationRoot Configuration { get; }
 
+        public static string ConnectionString { get; private set; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
             services.AddMvc();
+
+            ConnectionString = Configuration.GetConnectionString("DefaultDatabase");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +57,7 @@ namespace Dadelijk.nl
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=CMS}/{action=Login}/{id?}");
             });
         }
     }

@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutBase.cshtml";
+    ViewBag.BodyCssClass = "login";
+}
+@section Head
+{
+    <!-- Animate.css -->
+    <link href="@Url.Content("~/lib/gentelella/vendors/animate.css/animate.min.css")" rel="stylesheet">
+}
+@section Body{
+    <div>
+        <a class="hiddenanchor" id="signup"></a>
+        <a class="hiddenanchor" id="signin"></a>
+
+        <div class="login_wrapper">
+           @RenderSection("Content", true)
+        </div>
+    </div>
+}
