@@ -14,9 +14,14 @@ namespace DataAccess.Models
         {
             Id = id;
         }
-        
-        public string PassHash;
-        public string Email;
+
+        private string _passHash;
+        public string PassHash { get => _passHash; set => _passHash = value ?? throw new ArgumentNullException("PassHash"); }
+
+        private string _email;
+        public string Email { get => _email; set => _email = value ?? throw new ArgumentNullException("Email"); }
+
+
         public bool EmailConfirmed;
 
         public int Id { get; private set; }
