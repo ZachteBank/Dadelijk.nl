@@ -7,7 +7,7 @@ namespace Logic
 {
     public class UserManagementSystem
     {
-        private AccountRespository _accountRespository;
+        private readonly AccountRespository _accountRespository;
 
         public UserManagementSystem(string connectionString)
         {
@@ -19,13 +19,29 @@ namespace Logic
 
         public Account Login(string email, string password)
         {
+            var account = _accountRespository.GetAccountByEmail(email);
+            if (account != null && BCrypt.Net.BCrypt.Verify(password, account.PassHash))
+            {
+                return account;
+            }
             return null;
+        }
+
+        public Account Register(string email, string password)
+        {
+            var account = new Account
+            {
+                Email = email,
+                PassHash = HashPassword(password)
+            };
+
+            return _accountRespository.CreateAccount(account) ? account : null;
         }
 
         private string HashPassword(string password)
         {
-            //TODO: Make this method wauw tering zeg wtf
-            return password;
+            var salt = BCrypt.Net.BCrypt.GenerateSalt();
+            return BCrypt.Net.BCrypt.HashPassword(password, salt);
         }
     }
 }
