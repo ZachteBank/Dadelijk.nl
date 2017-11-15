@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Logic;
 
 namespace Dadelijk.nl.Controllers
 {
     public class CMSController : Controller
     {
+        private UserManagementSystem _ums = new UserManagementSystem();
         public IActionResult Index()
         {
             return View();
@@ -32,7 +34,11 @@ namespace Dadelijk.nl.Controllers
         {
             if (string.IsNullOrWhiteSpace(username))
             {
-
+                //Login
+            }
+            else
+            {
+                //Register
             }
             return View();
         }
