@@ -7,7 +7,7 @@
 {
     <div class="animate form login_form">
         <section class="login_content">
-            <form method="post">
+            <form asp-controller="CMS" asp-action="Login" method="post">
                 <h1>Login</h1>
                 <div>
                     <input name="email" type="text" class="form-control" placeholder="Email" required=""/>
@@ -42,7 +42,7 @@
 
     <div id="register" class="animate form registration_form">
         <section class="login_content">
-            <form method="post">
+            <form asp-controller="CMS" asp-action="Login" method="post">
                 <h1>Account registreren</h1>
                 <div>
                     <input name="username" type="text" class="form-control" placeholder="Gebruikersnaam" required=""/>

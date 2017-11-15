@@ -27,8 +27,18 @@ namespace Dadelijk.nl.Controllers
             return View();
         }
 
-        public IActionResult Login()
+        [HttpPost]
+        public IActionResult Login(string username, string email, string password)
         {
+            if (string.IsNullOrWhiteSpace(username))
+            {
+
+            }
+            return View();
+        }
+
+        public IActionResult Login()
+        {        
             return View();
         }
 
