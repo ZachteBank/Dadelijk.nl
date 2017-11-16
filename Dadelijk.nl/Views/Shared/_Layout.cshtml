@@ -118,6 +118,24 @@
             </div>
             <!-- /top navigation -->
             
+            
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Error!</strong> @ViewBag.Error
+                </div>
+            }
+            @if (ViewBag.Success != null)
+            {
+                <div class="alert alert-success alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Succes!</strong> @ViewBag.Success
+                </div>
+            }
+             
+
             @RenderSection("Content", true)
 
             <!-- footer content -->
