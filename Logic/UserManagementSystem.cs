@@ -1,5 +1,6 @@
 ﻿using System;
 using DataAccess;
+using DataAccess.Exceptions;
 using DataAccess.Models;
 using DataAccess.Repositories;
 
@@ -17,6 +18,15 @@ namespace Logic
             _accountRespository = new AccountRespository(dbSettings);
         }
 
+        public Account GetAccountByEmail(string email)
+        {
+            return _accountRespository.GetAccountByEmail(email);
+        }
+        public Account GetAccountById(int id)
+        {
+            return _accountRespository.GetAccountById(id);
+        }
+
         public Account Login(string email, string password)
         {
             var account = _accountRespository.GetAccountByEmail(email);
@@ -29,6 +39,10 @@ namespace Logic
 
         public Account Register(string email, string password)
         {
+            if (GetAccountByEmail(email) != null)
+            {
+                throw new AccountException("Email already exists!");
+            }
             var account = new Account
             {
                 Email = email,

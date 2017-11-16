@@ -74,7 +74,7 @@ namespace DataAccess.Repositories
                 var command = new SqlCommand(null, connection);
                 command.CommandText =
                     @"INSERT INTO Account(email, passHash) VALUES
-                (@email, @password, @confirmed);
+                (@email, @password);
                 SELECT SCOPE_IDENTITY() AS Id";
 
 

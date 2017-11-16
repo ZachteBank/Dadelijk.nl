@@ -11,7 +11,7 @@ namespace Dadelijk.nl.Controllers
 {
     public class CMSController : Controller
     {
-        private UserManagementSystem _ums = new UserManagementSystem("Data Source=volunteersapp.c153q9deg6j1.us-east-1.rds.amazonaws.com;Initial Catalog=volunteersApp;User id=App_bF72Esbab9RD;Password=Gq96h8MhY6JckP9ESScs3SfD;");
+        private UserManagementSystem _ums = new UserManagementSystem("Data Source=volunteersapp.c153q9deg6j1.us-east-1.rds.amazonaws.com;Initial Catalog=bram;User id=App_bF72Esbab9RD;Password=Gq96h8MhY6JckP9ESScs3SfD;");
         public IActionResult Index()
         {
             return View();
@@ -57,6 +57,7 @@ namespace Dadelijk.nl.Controllers
                 else
                 {
                     HttpContext.Session.SetInt32("id", account.Id);
+                    ViewBag.Success = "Registreren gelukt!";
                 }
             }
             return View();

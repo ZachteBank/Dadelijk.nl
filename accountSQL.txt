@@ -36,6 +36,9 @@ GO
 ALTER TABLE [dbo].[account] ADD  CONSTRAINT [DF_account_dateCreated]  DEFAULT (getdate()) FOR [dateCreated]
 GO
 
+ALTER TABLE [dbo].[account] ADD  CONSTRAINT [DF_account_disabled]  DEFAULT (0) FOR [disabled]
+GO
+
 CREATE TRIGGER trg_UpdateTimeEntry
 ON dbo.account
 AFTER UPDATE
