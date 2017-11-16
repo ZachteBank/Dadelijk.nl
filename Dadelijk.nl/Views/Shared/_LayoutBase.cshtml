@@ -10,8 +10,7 @@
     <meta name="MobileOptimized" content="320" />
 
     <title>@ViewData["Title"] - Dadelijk.nl</title>
-
-    <environment names="Development,Staging,Production">        
+      
         <!-- Bootstrap -->
         <link href="~/lib/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Font Awesome -->
@@ -33,7 +32,6 @@
 
         @RenderSection("Head", required: false)
 
-    </environment>
 
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
@@ -43,7 +41,6 @@
 
 
 
-<environment names="Development,Staging,Production">
     <!-- jQuery -->
     <script src="@Url.Content("~/lib/gentelella/vendors/jquery/dist/jquery.min.js")"></script>
     <!-- Bootstrap -->
@@ -68,6 +65,5 @@
     <script src="@Url.Content("~/lib/gentelella/build/js/custom.min.js")"></script>
 
     @RenderSection("Scripts", required: false)
-</environment>
 </body>
 </html>

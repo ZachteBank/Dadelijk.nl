@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Logic;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Dadelijk.nl.Controllers
 {
     public class CMSController : Controller
     {
-        private UserManagementSystem _ums = new UserManagementSystem();
+        private UserManagementSystem _ums = new UserManagementSystem("CONNECTIONSTRING");
         public IActionResult Index()
         {
             return View();
