@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataAccess.Models;
 using Logic;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dadelijk.nl.Controllers
@@ -38,7 +40,24 @@ namespace Dadelijk.nl.Controllers
             }
             else
             {
+                Account account = null;
                 //Register
+                try
+                {
+                    account = _ums.Register(email, password);
+                }
+                catch (Exception e)
+                {
+                    ViewBag.Error = "Er ging iets mis, probeer het opnieuw. Error: "+e.Message;
+                }
+                if (account == null)
+                {
+                    ViewBag.Error = "Er ging iets mis, probeer het opnieuw";
+                }
+                else
+                {
+                    HttpContext.Session.SetInt32("id", account.Id);
+                }
             }
             return View();
         }

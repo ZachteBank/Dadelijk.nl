@@ -18,7 +18,6 @@ namespace DataAccess.Repositories
             return new Account((int)reader["id"])
             {
                 Email = reader["email"].ToString(),
-                EmailConfirmed = (bool)reader["EmailConfirmed"],
                 PassHash = reader["passHash"].ToString()
             };
         }
@@ -74,7 +73,7 @@ namespace DataAccess.Repositories
 
                 var command = new SqlCommand(null, connection);
                 command.CommandText =
-                    @"INSERT INTO Account(email, passHash, emailConfirmed) VALUES
+                    @"INSERT INTO Account(email, passHash) VALUES
                 (@email, @password, @confirmed);
                 SELECT SCOPE_IDENTITY() AS Id";
 
@@ -82,8 +81,6 @@ namespace DataAccess.Repositories
                 command.Parameters.Add(new SqlParameter("email", account.Email));
                 
                 command.Parameters.Add(new SqlParameter("password", account.PassHash));
-
-                command.Parameters.Add(new SqlParameter("confirmed", account.EmailConfirmed));
 
                 var reader = command.ExecuteReader();
 
@@ -118,7 +115,6 @@ namespace DataAccess.Repositories
                 var account = new Account((int)reader["id"])
                 {
                     Email = (string)reader["email"],
-                    EmailConfirmed = (bool)reader["emailConfirmed"],
                     PassHash = (string)reader["passHash"]
                 };
 

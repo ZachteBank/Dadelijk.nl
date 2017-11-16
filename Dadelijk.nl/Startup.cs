@@ -32,6 +32,8 @@ namespace Dadelijk.nl
             // Add framework services.
             services.AddMvc();
 
+            services.AddSession(options => options.IdleTimeout = TimeSpan.FromDays(7));
+
             ConnectionString = Configuration.GetConnectionString("DefaultDatabase");
         }
 
@@ -50,6 +52,8 @@ namespace Dadelijk.nl
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseSession();
 
             app.UseStaticFiles();
 
