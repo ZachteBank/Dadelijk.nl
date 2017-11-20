@@ -37,6 +37,24 @@ namespace Dadelijk.nl.Controllers
             if (string.IsNullOrWhiteSpace(username))
             {
                 //Login
+                Account account = null;
+                try
+                {
+                    account = _ums.Login(email, password);
+                }
+                catch (Exception e)
+                {
+                    ViewBag.Error = "Er ging iets mis, probeer het opnieuw. Error: "+e.Message;
+                }
+                if (account == null)
+                {
+                    ViewBag.Error = "Er ging iets mis, probeer het opnieuw";
+                }
+                else
+                {
+                    HttpContext.Session.SetInt32("id", account.Id);
+                    ViewBag.Success = "Inloggen gelukt!";
+                }
             }
             else
             {

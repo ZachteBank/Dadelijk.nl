@@ -135,8 +135,14 @@
                 </div>
             }
              
-
-            @RenderSection("Content", true)
+            
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                @RenderSection("Content", true)
+                </div>
+            </div>
+            <!-- /page content -->
 
             <!-- footer content -->
             <footer>
