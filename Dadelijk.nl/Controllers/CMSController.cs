@@ -87,9 +87,10 @@ namespace Dadelijk.nl.Controllers
             return View();
         }
 
-        public IActionResult Error()
+        public IActionResult AddNewsItem()
         {
             return View();
         }
+
     }
 }
