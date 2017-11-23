@@ -13,29 +13,29 @@
             <div class="x_content form-horizontal form-label-left">
                 <form action="" data-parsley-validate method="post">
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="subject">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="subject">
                             Onderwerp <span class="required">*</span>
                         </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-md-9 col-sm-9 col-xs-12">
                             <input type="text" id="subject" name="subject" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="text">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="text">
                             Text <span class="required">*</span>
                         </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-md-9 col-sm-9 col-xs-12">
                             <!--<textarea id="text" name="text" rows="6" cols="30" class="form-control col-md-7 col-xs-12"></textarea>-->
-                            @Html.Partial("Login")
+                            @Html.Partial("../Partials/TextEditor")
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="active">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="active">
                             Actief <span class="required">*</span>
                         </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-md-9 col-sm-9 col-xs-12">
                             <input name="active" id="active" type="checkbox" class="js-switch" checked />
                         </div>
                     </div>
