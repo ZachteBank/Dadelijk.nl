@@ -12,20 +12,8 @@
         <a class="hiddenanchor" id="signup"></a>
         <a class="hiddenanchor" id="signin"></a>
         
-        @if (ViewBag.Error != null)
-        {
-            <div class="alert alert-danger alert-dismissable">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>Error!</strong> @ViewBag.Error
-            </div>
-        }
-        @if (ViewBag.Success != null)
-        {
-            <div class="alert alert-success alert-dismissable">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>Succes!</strong> @ViewBag.Success
-            </div>
-        }
+        @Html.Partial("~/Views/Partials/Alert.cshtml")
+
 
         <div class="login_wrapper">
            @RenderSection("Content", true)

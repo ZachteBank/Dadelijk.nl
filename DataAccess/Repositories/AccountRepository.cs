@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
-using DataAccess.Models;
+using Models;
 
 namespace DataAccess.Repositories
 {
     public class AccountRespository : BaseRepository
     {
+        public AccountRespository(DatabaseSettings settings) : base(settings)
+        {
+        }
+
         private Account CreateAccountByReader(SqlDataReader reader)
         {
             if (!reader.Read())
@@ -122,8 +126,6 @@ namespace DataAccess.Repositories
             }
         }
 
-        public AccountRespository(DatabaseSettings settings) : base(settings)
-        {
-        }
+        
     }
 }
