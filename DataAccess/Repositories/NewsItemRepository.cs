@@ -44,6 +44,33 @@ namespace DataAccess.Repositories
             }
         }
 
+        public void UpdateNewsItem(NewsItem newsItem)
+        {
+            if (newsItem?.Text == null || newsItem.Subject == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (newsItem.Id == 0)
+            {
+                throw new ArgumentException("Id cant be 0");
+            }
+
+            using (var connection = GetConnection())
+            {
+                var command = new SqlCommand(null, connection)
+                {
+                    CommandText = @"UPDATE [dbo].NewsItem SET subject = @subject, text = @text WHERE id = @id"
+                };
+
+                command.Parameters.Add(new SqlParameter("id", newsItem.Id));
+                command.Parameters.Add(new SqlParameter("subject", newsItem.Subject));
+                command.Parameters.Add(new SqlParameter("text", newsItem.Text));
+                command.ExecuteNonQuery();
+            }
+
+        }
+
         public bool CreateNewsItem(NewsItem newsItem)
         {
             if (newsItem?.Subject == null || newsItem.Text == null)

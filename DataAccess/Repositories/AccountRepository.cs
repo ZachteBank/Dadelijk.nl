@@ -102,11 +102,10 @@ namespace DataAccess.Repositories
         {
             using (var connection = GetConnection())
             {
-
-                var command = new SqlCommand(null, connection);
-                command.CommandText =
-                    @"SELECT * FROM Account WHERE id=@id";
-
+                var command = new SqlCommand(null, connection)
+                {
+                    CommandText = @"SELECT * FROM Account WHERE id=@id"
+                };
 
                 command.Parameters.Add(new SqlParameter("id", id));
 
