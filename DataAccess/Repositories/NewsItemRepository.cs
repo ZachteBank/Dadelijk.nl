@@ -43,5 +43,37 @@ namespace DataAccess.Repositories
 
             }
         }
+
+        public bool CreateNewsItem(NewsItem newsItem)
+        {
+            if (newsItem?.Subject == null || newsItem.Text == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (newsItem.Id != 0)
+            {
+                throw new ArgumentException("Newsitem id should be 0");
+            }
+
+            using (var connection = GetConnection())
+            {
+                var command = new SqlCommand(null, connection);
+                command.CommandText = @"INSERT INTO NewsItem(subject, text) 
+                                        VALUES (@subject, @text);
+                                        SELECT SCOPE_IDENTITY() AS Id";
+
+                command.Parameters.Add(new SqlParameter("subject", newsItem.Subject));
+                command.Parameters.Add(new SqlParameter("text", newsItem.Text));
+
+                var reader = command.ExecuteReader();
+                if (!reader.Read())
+                {
+                    return false;
+                }
+                SetIdOfModel(newsItem, (int)reader.GetDecimal(0));
+                return true;
+            }
+        }
     }
 }
