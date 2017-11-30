@@ -12,38 +12,38 @@
 USE [bram]
 GO
 
-/****** Object:  Table [dbo].[account]    Script Date: 16-11-2017 11:47:26 ******/
+/****** Object:  Table [dbo].[Account]    Script Date: 16-11-2017 11:47:26 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[account](
+CREATE TABLE [dbo].[Account](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[email] [varchar](255) NOT NULL,
 	[passHash] [varchar](70) NOT NULL,
 	[disabled] [bit] NOT NULL,
 	[dateCreated] [datetime] NOT NULL,
 	[dateUpdated] [datetime] NULL,
- CONSTRAINT [PK_account] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_Account] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 
-ALTER TABLE [dbo].[account] ADD  CONSTRAINT [DF_account_dateCreated]  DEFAULT (getdate()) FOR [dateCreated]
+ALTER TABLE [dbo].[Account] ADD  CONSTRAINT [DF_Account_dateCreated]  DEFAULT (getdate()) FOR [dateCreated]
 GO
 
-ALTER TABLE [dbo].[account] ADD  CONSTRAINT [DF_account_disabled]  DEFAULT (0) FOR [disabled]
+ALTER TABLE [dbo].[Account] ADD  CONSTRAINT [DF_Account_disabled]  DEFAULT (0) FOR [disabled]
 GO
 
 CREATE TRIGGER trg_UpdateTimeEntry
-ON dbo.account
+ON dbo.Account
 AFTER UPDATE
 AS
-    UPDATE dbo.account
+    UPDATE dbo.Account
     SET dateUpdated = GETDATE()
     WHERE id IN (SELECT DISTINCT id FROM Inserted)
 

@@ -105,7 +105,7 @@ namespace DataAccess.Repositories
 
                 var command = new SqlCommand(null, connection);
                 command.CommandText =
-                    @"SELECT * FROM account WHERE id=@id";
+                    @"SELECT * FROM Account WHERE id=@id";
 
 
                 command.Parameters.Add(new SqlParameter("id", id));

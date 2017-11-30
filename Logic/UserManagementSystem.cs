@@ -1,8 +1,8 @@
 ﻿using System;
 using DataAccess;
 using DataAccess.Exceptions;
-using DataAccess.Models;
 using DataAccess.Repositories;
+using Models;
 
 namespace Logic
 {

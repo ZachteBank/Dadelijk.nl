@@ -6,7 +6,7 @@ using Models;
 
 namespace DataAccess.Repositories
 {
-    class NewsItemRepository : BaseRepository
+    public class NewsItemRepository : BaseRepository
     {
         public NewsItemRepository(DatabaseSettings settings) : base(settings)
         {
@@ -23,6 +23,25 @@ namespace DataAccess.Repositories
                 Subject = reader["subject"].ToString(),
                 Text = reader["text"].ToString()
             };
+        }
+
+        public NewsItem GetNewsItemById(int id)
+        {
+            using (var conn = GetConnection())
+            {
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText =
+                        @"SELECT * 
+                    FROM dbo.NewsItem
+                    WHERE NewsItem.id = @id";
+                    cmd.Parameters.Add(new SqlParameter("id", id));
+
+                    var reader = cmd.ExecuteReader();
+                    return CreateNewsItemByReader(reader);
+                }
+
+            }
         }
     }
 }
