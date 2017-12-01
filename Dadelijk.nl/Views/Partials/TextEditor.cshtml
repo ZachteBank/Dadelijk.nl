@@ -63,4 +63,19 @@
 
 <div id="editor-one" class="editor-wrapper"></div>
 
-<textarea name="text" id="descr" style="display:none;"></textarea>
+<textarea name="text" id="text" style="display:none;"></textarea>
+
+
+<script defer>
+    document.addEventListener('DOMContentLoaded',
+        function() {
+            //-- submit button clicked
+            $('.editor').closest("form").submit(function(e) {
+                $('#text').html(
+                    $("#editor-one").html()
+                );
+                console.log("jaja");
+            });
+        },
+        false);
+</script>

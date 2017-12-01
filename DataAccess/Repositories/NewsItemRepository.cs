@@ -21,7 +21,8 @@ namespace DataAccess.Repositories
             return new NewsItem((int)reader["id"])
             {
                 Subject = reader["subject"].ToString(),
-                Text = reader["text"].ToString()
+                Text = reader["text"].ToString(),
+                Active = (bool)reader["active"]
             };
         }
 
@@ -60,12 +61,13 @@ namespace DataAccess.Repositories
             {
                 var command = new SqlCommand(null, connection)
                 {
-                    CommandText = @"UPDATE [dbo].NewsItem SET subject = @subject, text = @text WHERE id = @id"
+                    CommandText = @"UPDATE [dbo].NewsItem SET subject = @subject, text = @text, active=@active WHERE id = @id"
                 };
 
                 command.Parameters.Add(new SqlParameter("id", newsItem.Id));
                 command.Parameters.Add(new SqlParameter("subject", newsItem.Subject));
                 command.Parameters.Add(new SqlParameter("text", newsItem.Text));
+                command.Parameters.Add(new SqlParameter("active", newsItem.Active));
                 command.ExecuteNonQuery();
             }
 
@@ -86,12 +88,13 @@ namespace DataAccess.Repositories
             using (var connection = GetConnection())
             {
                 var command = new SqlCommand(null, connection);
-                command.CommandText = @"INSERT INTO NewsItem(subject, text) 
-                                        VALUES (@subject, @text);
+                command.CommandText = @"INSERT INTO NewsItem(subject, text, active) 
+                                        VALUES (@subject, @text, @active);
                                         SELECT SCOPE_IDENTITY() AS Id";
 
                 command.Parameters.Add(new SqlParameter("subject", newsItem.Subject));
                 command.Parameters.Add(new SqlParameter("text", newsItem.Text));
+                command.Parameters.Add(new SqlParameter("active", newsItem.Active));
 
                 var reader = command.ExecuteReader();
                 if (!reader.Read())

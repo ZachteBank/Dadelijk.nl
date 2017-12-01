@@ -23,7 +23,7 @@ CREATE TABLE [dbo].[NewsItem](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[subject] [varchar](255) NOT NULL,
 	[text] [varchar](MAX) NOT NULL,
-	[disabled] [bit] NOT NULL,
+	[active] [bit] NOT NULL,
 	[dateCreated] [datetime] NOT NULL,
 	[dateUpdated] [datetime] NULL,
  CONSTRAINT [PK_NewsItem] PRIMARY KEY CLUSTERED 
@@ -36,7 +36,7 @@ GO
 ALTER TABLE [dbo].[NewsItem] ADD  CONSTRAINT [DF_NewsItem_dateCreated]  DEFAULT (getdate()) FOR [dateCreated]
 GO
 
-ALTER TABLE [dbo].[NewsItem] ADD  CONSTRAINT [DF_NewsItem_disabled]  DEFAULT (0) FOR [disabled]
+ALTER TABLE [dbo].[NewsItem] ADD  CONSTRAINT [DF_NewsItem_active]  DEFAULT (1) FOR [active]
 GO
 
 CREATE TRIGGER trg_UpdateTimeEntryNews

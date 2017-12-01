@@ -13,6 +13,7 @@ namespace Dadelijk.nl.Controllers
     {
         //CONNECTION STRING: Data Source=volunteersapp.c153q9deg6j1.us-east-1.rds.amazonaws.com;Initial Catalog=bram;User id=App_bF72Esbab9RD;Password=Gq96h8MhY6JckP9ESScs3SfD;
         private UserManagementSystem _ums = new UserManagementSystem(Startup.ConnectionString);
+        private TaskManagementSystem _tms = new TaskManagementSystem(Startup.ConnectionString);
         public IActionResult Index()
         {
             return View();
@@ -84,6 +85,12 @@ namespace Dadelijk.nl.Controllers
 
         public IActionResult Login()
         {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddNewsItem(string subject, string text, bool active)
+        {
+            _tms.CreateNewsItem(subject, text, active);
             return View();
         }
 

@@ -7,7 +7,7 @@ using Models;
 
 namespace Logic
 {
-    class TaskManagementSystem
+    public class TaskManagementSystem
     {
         private AccountRespository _accountRespository;
         private NewsItemRepository _newsItemRepository;
@@ -20,7 +20,7 @@ namespace Logic
             _newsItemRepository = new NewsItemRepository(dbSettings);
         }
 
-        public bool CreateNewsItem(string subject, string text)
+        public bool CreateNewsItem(string subject, string text, bool active)
         {
             if (string.IsNullOrWhiteSpace(subject) || string.IsNullOrWhiteSpace(text))
             {
@@ -30,7 +30,8 @@ namespace Logic
             var newsItem = new NewsItem
             {
                 Subject = subject,
-                Text = text
+                Text = text,
+                Active = active
             };
 
             return AddNewsItem(newsItem);
