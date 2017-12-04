@@ -90,11 +90,24 @@ namespace Dadelijk.nl.Controllers
         [HttpPost]
         public IActionResult AddNewsItem(string subject, string text, bool active)
         {
-            _tms.CreateNewsItem(subject, text, active);
+            if (_tms.CreateNewsItem(subject, text, active))
+            {
+                ViewBag.Success = "Nieuws item toegevoegd";
+            }
             return View();
         }
 
         public IActionResult AddNewsItem()
+        {
+            return View();
+        }
+
+        public IActionResult AllNewsItems()
+        {
+            return View();
+        }
+
+        public IActionResult EditNewsItem()
         {
             return View();
         }
