@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using DataAccess;
 using DataAccess.Repositories;
@@ -35,6 +36,16 @@ namespace Logic
             };
 
             return AddNewsItem(newsItem);
+        }
+
+        public IEnumerable<NewsItem> AllNewsItems(bool onlyActive = true)
+        {
+            return onlyActive ? _newsItemRepository.GetAllNewsItems().Where(x => x.Active = true) : _newsItemRepository.GetAllNewsItems();
+        }
+
+        public void EditNewsItem(NewsItem newsItem)
+        {
+            _newsItemRepository.UpdateNewsItem(newsItem);
         }
 
         public bool AddNewsItem(NewsItem newsItem)

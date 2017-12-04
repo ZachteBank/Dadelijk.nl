@@ -45,6 +45,35 @@ namespace DataAccess.Repositories
             }
         }
 
+        public IEnumerable<NewsItem> GetAllNewsItems()
+        {
+            using (var conn = GetConnection())
+            {
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText =
+                        @"SELECT * 
+                    FROM dbo.NewsItem";
+
+                    var reader = cmd.ExecuteReader();
+                    var items = new List<NewsItem>();
+
+                    while (reader.Read())
+                    {
+                        var item = new NewsItem((int)reader["id"])
+                        {
+                            Subject = reader["subject"].ToString(),
+                            Text = reader["text"].ToString(),
+                            Active = (bool) reader["active"]
+                        };
+                        items.Add(item);
+                    }
+                    return items;
+                }
+
+            }
+        }
+
         public void UpdateNewsItem(NewsItem newsItem)
         {
             if (newsItem?.Text == null || newsItem.Subject == null)

@@ -104,12 +104,15 @@ namespace Dadelijk.nl.Controllers
 
         public IActionResult AllNewsItems()
         {
-            return View();
+            var newsItems = _tms.AllNewsItems();
+            return View(newsItems);
         }
 
-        public IActionResult EditNewsItem()
+        [HttpGet]
+        public IActionResult EditNewsItem(int newsItemId)
         {
-            return View();
+            var newsItem = _tms.GetNewsItemById(newsItemId);
+            return View(newsItem);
         }
 
     }
