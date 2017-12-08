@@ -12,8 +12,18 @@ namespace Models
         
         public string Subject { get; set; }
 
-        public string Text { get; set; }
+        private string _text;
 
         public bool Active { get; set; }
+
+        public string Text
+        {
+            get => _text;
+            set
+            {
+                value = value.Replace("script", "niceTry");
+                _text = value;
+            }
+        }
     }
 }
