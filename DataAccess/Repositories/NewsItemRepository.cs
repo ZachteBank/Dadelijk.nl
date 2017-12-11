@@ -18,14 +18,16 @@ namespace DataAccess.Repositories
             {
                 return null;
             }
-            return new NewsItem((int)reader["id"])
+            var newsItem =  new NewsItem((int)reader["id"])
             {
                 Subject = reader["subject"].ToString(),
                 Text = reader["text"].ToString(),
                 Active = (bool)reader["active"],
-                DateCreated = Convert.ToDateTime(reader["dateCreated"]),
-                DateUpdated = Convert.ToDateTime(reader["dateUpdated"]),
             };
+
+            AddDateCreatedAndDateUpdated(newsItem, reader);
+
+            return newsItem;
         }
 
         public NewsItem GetNewsItemById(int id)

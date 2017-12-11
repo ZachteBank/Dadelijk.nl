@@ -19,14 +19,16 @@ namespace DataAccess.Repositories
             {
                 return null;
             }
-            return new Account((int)reader["id"])
+            var account = new Account((int) reader["id"])
             {
                 Email = reader["email"].ToString(),
                 PassHash = reader["passHash"].ToString(),
-                AccountType = (AccountType)Convert.ToInt32(reader["accountTypeId"]),
-                DateCreated = Convert.ToDateTime(reader["dateCreated"]),
-                DateUpdated = Convert.ToDateTime(reader["dateUpdated"]),
+                AccountType = (AccountType) ((reader["accountTypeId"] as int?) ?? 0),
             };
+
+            AddDateCreatedAndDateUpdated(account, reader);
+
+            return account;
         }
 
         public Account GetAccountByEmail(string email)

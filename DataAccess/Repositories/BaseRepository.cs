@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Reflection;
+using Models;
 
 namespace DataAccess.Repositories
 {
@@ -21,6 +22,14 @@ namespace DataAccess.Repositories
             var connection = new SqlConnection(Settings.GetConnectionString());
             connection.Open();
             return connection;
+        }
+
+        protected void AddDateCreatedAndDateUpdated(BaseModel baseModel, SqlDataReader reader)
+        {
+            baseModel.DateCreated = Convert.ToDateTime(reader["dateCreated"].ToString());
+            baseModel.DateUpdated = !Convert.IsDBNull(reader["dateUpdated"])
+                ? Convert.ToDateTime(reader["dateUpdated"].ToString())
+                : (DateTime?) null;
         }
 
         protected void SetIdOfModel(object model, int id)
