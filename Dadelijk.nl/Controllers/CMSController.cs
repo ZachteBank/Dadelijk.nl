@@ -56,6 +56,7 @@ namespace Dadelijk.nl.Controllers
                 {
                     HttpContext.Session.SetInt32("id", account.Id);
                     ViewBag.Success = "Inloggen gelukt!";
+                    return RedirectToAction("Index");
                 }
             }
             else
@@ -78,6 +79,7 @@ namespace Dadelijk.nl.Controllers
                 {
                     HttpContext.Session.SetInt32("id", account.Id);
                     ViewBag.Success = "Registreren gelukt!";
+                    return RedirectToAction("Login");
                 }
             }
             return View();
