@@ -10,13 +10,17 @@ namespace Models
         {
         }
 
-        private string _passHash;
-        public string PassHash { get => _passHash; set => _passHash = value ?? throw new ArgumentNullException("PassHash"); }
+        public int Id { get; private set; }
 
         private string _email;
         public string Email { get => _email; set => _email = value ?? throw new ArgumentNullException("Email"); }
 
+        private string _passHash;
+        public string PassHash { get => _passHash; set => _passHash = value ?? throw new ArgumentNullException("PassHash"); }
+        
+        public AccountType AccountType { get; set; }
 
-        public int Id { get; private set; }
+
+
     }
 }

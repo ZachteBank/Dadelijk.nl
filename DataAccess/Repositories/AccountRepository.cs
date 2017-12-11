@@ -22,7 +22,10 @@ namespace DataAccess.Repositories
             return new Account((int)reader["id"])
             {
                 Email = reader["email"].ToString(),
-                PassHash = reader["passHash"].ToString()
+                PassHash = reader["passHash"].ToString(),
+                AccountType = (AccountType)Convert.ToInt32(reader["accountTypeId"]),
+                DateCreated = Convert.ToDateTime(reader["dateCreated"]),
+                DateUpdated = Convert.ToDateTime(reader["dateUpdated"]),
             };
         }
 
@@ -77,14 +80,16 @@ namespace DataAccess.Repositories
 
                 var command = new SqlCommand(null, connection);
                 command.CommandText =
-                    @"INSERT INTO Account(email, passHash) VALUES
-                (@email, @password);
+                    @"INSERT INTO Account(email, passHash, accountTypeId) VALUES
+                (@email, @password, @accountTypeId);
                 SELECT SCOPE_IDENTITY() AS Id";
 
 
                 command.Parameters.Add(new SqlParameter("email", account.Email));
                 
                 command.Parameters.Add(new SqlParameter("password", account.PassHash));
+
+                command.Parameters.Add(new SqlParameter("accountTypeId", (int)account.AccountType));
 
                 var reader = command.ExecuteReader();
 
@@ -110,18 +115,8 @@ namespace DataAccess.Repositories
                 command.Parameters.Add(new SqlParameter("id", id));
 
                 var reader = command.ExecuteReader();
-                if (!reader.Read())
-                {
-                    return null;
-                }
-
-                var account = new Account((int)reader["id"])
-                {
-                    Email = (string)reader["email"],
-                    PassHash = (string)reader["passHash"]
-                };
-
-                return account;
+                
+                return CreateAccountByReader(reader);
             }
         }
 

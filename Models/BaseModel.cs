@@ -13,8 +13,8 @@ namespace Models
 
         public int Id { get; protected set; }
 
-        public DateTime DateCreated { get; private set; }
+        public DateTime DateCreated { get; set; }
 
-        public DateTime DateUpdated { get; private set; }
+        public DateTime DateUpdated { get; set; }
     }
 }

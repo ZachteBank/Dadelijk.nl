@@ -22,7 +22,9 @@ namespace DataAccess.Repositories
             {
                 Subject = reader["subject"].ToString(),
                 Text = reader["text"].ToString(),
-                Active = (bool)reader["active"]
+                Active = (bool)reader["active"],
+                DateCreated = Convert.ToDateTime(reader["dateCreated"]),
+                DateUpdated = Convert.ToDateTime(reader["dateUpdated"]),
             };
         }
 
@@ -57,7 +59,8 @@ namespace DataAccess.Repositories
 
                     var reader = cmd.ExecuteReader();
                     var items = new List<NewsItem>();
-
+                    
+                    /*
                     while (reader.Read())
                     {
                         var item = new NewsItem((int)reader["id"])
@@ -67,6 +70,11 @@ namespace DataAccess.Repositories
                             Active = (bool) reader["active"]
                         };
                         items.Add(item);
+                    }
+                    */
+                    for (int i = 0; i < reader.Depth; i++)
+                    {
+                        items.Add(CreateNewsItemByReader(reader));
                     }
                     return items;
                 }

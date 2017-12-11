@@ -23,6 +23,7 @@ CREATE TABLE [dbo].[Account](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[email] [varchar](255) NOT NULL,
 	[passHash] [varchar](70) NOT NULL,
+	[accountTypeId] [int] NOT NULl,
 	[disabled] [bit] NOT NULL,
 	[dateCreated] [datetime] NOT NULL,
 	[dateUpdated] [datetime] NULL,
@@ -37,6 +38,9 @@ ALTER TABLE [dbo].[Account] ADD  CONSTRAINT [DF_Account_dateCreated]  DEFAULT (g
 GO
 
 ALTER TABLE [dbo].[Account] ADD  CONSTRAINT [DF_Account_disabled]  DEFAULT (0) FOR [disabled]
+GO
+
+ALTER TABLE [dbo].[Account] ADD  CONSTRAINT [DF_Account_accountType]  DEFAULT (0) FOR [accountTypeId]
 GO
 
 CREATE TRIGGER trg_UpdateTimeEntry
