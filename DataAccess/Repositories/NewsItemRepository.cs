@@ -74,9 +74,16 @@ namespace DataAccess.Repositories
                         items.Add(item);
                     }
                     */
+                    /*
                     for (int i = 0; i < reader.Depth; i++)
                     {
                         items.Add(CreateNewsItemByReader(reader));
+                    }*/
+                    NewsItem newsItem = null;
+
+                    while ((newsItem = CreateNewsItemByReader(reader)) != null)
+                    {
+                        items.Add(newsItem);
                     }
                     return items;
                 }
