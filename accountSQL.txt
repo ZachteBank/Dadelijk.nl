@@ -21,6 +21,7 @@ GO
 
 CREATE TABLE [dbo].[Account](
 	[id] [int] IDENTITY(1,1) NOT NULL,
+	[username] [varchar](255) NOT NULL,
 	[email] [varchar](255) NOT NULL,
 	[passHash] [varchar](70) NOT NULL,
 	[accountTypeId] [int] NOT NULl,

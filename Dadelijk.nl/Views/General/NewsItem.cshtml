@@ -1,8 +1,9 @@
-﻿@model Models.NewsItem
+﻿@using Microsoft.AspNetCore.Http
+@using Models
+@model Models.NewsItem
 
 @{
     ViewData["Title"] = "Home Page";
-
 }
 
 
@@ -16,6 +17,70 @@
             </div>
             <div class="x_content">
                 @Html.Raw(Model.Text)
+                
+                <div class="ln_solid"></div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    @if (Context.Session.GetInt32("id") > 0)
+                    {
+                        <a href="#Reaction">Reactie schrijven</a>
+                        <text> - </text>
+                    }
+                    else
+                    {
+                        <a asp-controller="CMS" asp-action="Login">Inloggen</a>
+                        <text> voor een reactie te schrijven - </text>
+                    }
+                    <a href="#Reaction">Melden</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    
+    @foreach (var reaction in Model.Reactions)
+    {
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h4>Reactie - @reaction.Account.UserName</h4>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    @Html.Raw(reaction.Text)
+                </div>
+            </div>
+        </div>
+    }
+    
+
+    <div id="Reaction" class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h4>Reactie schrijven</h4>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content form-horizontal form-label-left">
+                <form asp-action="AddReaction" data-parsley-validate method="post">
+                    <input type="hidden" name="newsItemId" value="@Model.Id"/>
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="text">
+                            Text <span class="required">*</span>
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            @Html.Partial("../Partials/TextEditor", "")
+                        </div>
+                    </div>
+
+                    <div class="ln_solid"></div>
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            <button type="submit" class="btn btn-primary">Reageren</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

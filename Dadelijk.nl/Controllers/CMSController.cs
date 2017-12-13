@@ -34,6 +34,7 @@ namespace Dadelijk.nl.Controllers
         }
 
         [HttpPost]
+        [Route("inloggen")]
         public IActionResult Login(string username, string email, string password)
         {
             if (string.IsNullOrWhiteSpace(username))
@@ -85,6 +86,7 @@ namespace Dadelijk.nl.Controllers
             return View();
         }
 
+        [Route("inloggen")]
         public IActionResult Login()
         {
             return View();

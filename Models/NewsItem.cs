@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Models
 {
@@ -10,6 +11,8 @@ namespace Models
         {
         }
         
+        public IEnumerable<Reaction> Reactions { get; set; }
+
         public string Subject { get; set; }
 
         private string _text;
@@ -23,6 +26,8 @@ namespace Models
                 _text = value;
             }
         }
+        private readonly Regex regex = new Regex("[^a-zA-Z0-9-]");
+        public string SubjectUrl => regex.Replace(Subject, "-").Replace("--", "-");
 
         public bool Active { get; set; }
 

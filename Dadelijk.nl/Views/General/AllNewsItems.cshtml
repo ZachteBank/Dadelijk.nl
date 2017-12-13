@@ -21,7 +21,7 @@
             <div class="x_content">
                 @foreach (var item in Model)
                 {
-                    <div class="col-md-12 alignSpanVerticalMiddle"><span><small>@(item.DateUpdated == null ? item.DateCreated.ToString("t") : item.DateUpdated.Value.ToString("t"))</small> - </span><span class="newsItemListItem"><a asp-controller="General" asp-action="NewsItem" asp-route-id="@item.Id" asp-route-subject="@item.Subject.Replace(" ", "-")">@item.Subject</a></span></div>
+                    <div class="col-md-12 alignSpanVerticalMiddle"><span><small>@(item.DateUpdated == null ? item.DateCreated.ToString("t") : item.DateUpdated.Value.ToString("t"))</small> - </span><span class="newsItemListItem"><a asp-controller="General" asp-action="NewsItem" asp-route-id="@item.Id" asp-route-subject="@item.SubjectUrl">@item.Subject</a></span></div>
                 }
                 <div class="clearfix"></div>
                 <div class="ln_solid"></div>

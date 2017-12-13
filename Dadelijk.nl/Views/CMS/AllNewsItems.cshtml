@@ -46,7 +46,7 @@
                                 @(item.DateUpdated == null ? "Nooit" : item.DateUpdated.Value.ToString("f"))
                             </td>
                             <td>
-                                <a asp-controller="General" asp-action="NewsItem" asp-route-id="@item.Id" asp-route-subject="@item.Subject.Replace(" ", "-")" class="btn btn-primary btn-sm" title="Nieuwsbericht bekijken"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                <a asp-controller="General" asp-action="NewsItem" asp-route-id="@item.Id" asp-route-subject="@item.SubjectUrl" class="btn btn-primary btn-sm" title="Nieuwsbericht bekijken"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                 <a asp-controller="CMS" asp-action="EditNewsItem" asp-route-newsItemId="@item.Id" class="btn btn-primary btn-sm" title="Wijzigen"><i class="fa fa-edit" aria-hidden="true"></i></a>
                                 <a asp-controller="CMS" asp-action="ChangeStateNewsItem" asp-route-newsItemId="@item.Id" class="confirmClick btn btn-@(item.Active ? "danger" : "success") btn-sm" title="@(item.Active ? "Uitzetten" : "Aanzetten")">
                                     <i class="fa fa-@(item.Active ? "toggle-off" : "toggle-on")" aria-hidden="true"></i>

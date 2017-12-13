@@ -39,7 +39,33 @@ namespace Dadelijk.nl.Controllers
             {
                 return RedirectToAction("Index");
             }
+            if (TempData["Success"] != null)
+                ViewBag.Success = TempData["Success"].ToString();
+            if (TempData["Error"] != null)
+                ViewBag.Error = TempData["Error"].ToString();
             return View(newsItem);
+        }
+
+        [HttpPost]
+        public IActionResult AddReaction(int newsItemId, string text, int reactionId = 0)
+        {
+            var newsItem = _tms.GetNewsItemById(newsItemId);
+            if (isLoggedIn())
+            {
+                _tms.CreateReaction((int) HttpContext.Session.GetInt32("id"), newsItemId, text, reactionId);
+                TempData["Success"] = "Reactie is gepost";
+
+            }
+            else
+            {
+                TempData["Error"] = "Niet ingelogd";
+            }
+            return RedirectToAction("NewsItem", "General", new {id = newsItemId, subject=newsItem.SubjectUrl});
+        }
+
+        private bool isLoggedIn()
+        {
+            return HttpContext.Session.GetInt32("id") != null;
         }
 
 

@@ -21,6 +21,7 @@ namespace DataAccess.Repositories
             }
             var account = new Account((int) reader["id"])
             {
+                UserName = reader["username"].ToString(),
                 Email = reader["email"].ToString(),
                 PassHash = reader["passHash"].ToString(),
                 AccountType = (AccountType) ((reader["accountTypeId"] as int?) ?? 0),
@@ -82,7 +83,7 @@ namespace DataAccess.Repositories
 
                 var command = new SqlCommand(null, connection);
                 command.CommandText =
-                    @"INSERT INTO Account(email, passHash, accountTypeId) VALUES
+                    @"INSERT INTO Account(email, passHash, accountTypeId, username) VALUES
                 (@email, @password, @accountTypeId);
                 SELECT SCOPE_IDENTITY() AS Id";
 
@@ -92,6 +93,7 @@ namespace DataAccess.Repositories
                 command.Parameters.Add(new SqlParameter("password", account.PassHash));
 
                 command.Parameters.Add(new SqlParameter("accountTypeId", (int)account.AccountType));
+                command.Parameters.Add(new SqlParameter("username", account.UserName));
 
                 var reader = command.ExecuteReader();
 

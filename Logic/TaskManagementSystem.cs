@@ -12,6 +12,7 @@ namespace Logic
     {
         private AccountRespository _accountRespository;
         private NewsItemRepository _newsItemRepository;
+        private ReactionRepository _reactionRepository;
 
         public TaskManagementSystem(string connectionString)
         {
@@ -20,6 +21,25 @@ namespace Logic
 
             _accountRespository = new AccountRespository(dbSettings);
             _newsItemRepository = new NewsItemRepository(dbSettings);
+            _reactionRepository = new ReactionRepository(dbSettings);
+        }
+
+        public bool CreateReaction(int accountId, int newsItemId, string text, int reactionId = 0)
+        {
+            var reaction = new Reaction()
+            {
+                Account = _accountRespository.GetAccountById(accountId),
+                NewsItem = _newsItemRepository.GetNewsItemById(newsItemId),
+                ParentReaction = reactionId > 0 ? _reactionRepository.GetReactionById(reactionId) : null,
+                Text = text,
+            };
+
+            return AddReaction(reaction);
+        }
+
+        public bool AddReaction(Reaction reaction)
+        {
+            return _reactionRepository.CreateReaction(reaction);
         }
 
         public bool CreateNewsItem(string subject, string text, bool active)
