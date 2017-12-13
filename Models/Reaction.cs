@@ -11,7 +11,20 @@ namespace Models
         }
 
 
+        public NewsItem NewsItem { get; set; }
+        public Account Account { get; set; }
+        public Reaction ParentReaction { get; set; }
 
-
+        private string _text;
+        public string Text
+        {
+            get => _text;
+            set
+            {
+                value = value.Replace("script", "niceTry");
+                _text = value;
+            }
+        }
+        public bool Active { get; set; }
     }
 }

@@ -21,9 +21,9 @@ GO
 
 CREATE TABLE [dbo].[Reaction](
 	[id] [int] IDENTITY(1,1) NOT NULL,
-	[newsItemId] [int] NOT NULL, FOREIGN KEY REFERENCES NewsItem(id),
-	[accountId] [int](11) NOT NULL, FOREIGN KEY REFERENCES Account(id),
-	[reactionId] [int](11) NULL, FOREIGN KEY REFERENCES Reaction(id),
+	[newsItemId] [int] NOT NULL FOREIGN KEY REFERENCES NewsItem(id),
+	[accountId] [int] NOT NULL	FOREIGN KEY REFERENCES Account(id),
+	[reactionId] [int] NULL FOREIGN KEY REFERENCES Reaction(id),
 	[text] [varchar](MAX) NOT NULL,
 	[active] [bit] NOT NULL,
 	[dateCreated] [datetime] NOT NULL,
@@ -41,7 +41,7 @@ GO
 ALTER TABLE [dbo].[Reaction] ADD  CONSTRAINT [DF_Reaction_active]  DEFAULT (1) FOR [active]
 GO
 
-CREATE TRIGGER trg_UpdateTimeEntryNews
+CREATE TRIGGER trg_UpdateTimeEntryReaction
 ON dbo.Reaction
 AFTER UPDATE
 AS
