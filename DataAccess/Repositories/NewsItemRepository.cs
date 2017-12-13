@@ -49,36 +49,34 @@ namespace DataAccess.Repositories
             }
         }
 
-        public IEnumerable<NewsItem> GetAllNewsItems()
+        public IEnumerable<NewsItem> GetAllNewsItems(DateTime? date = null)
         {
             using (var conn = GetConnection())
             {
                 using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText =
-                        @"SELECT * 
-                    FROM dbo.NewsItem";
+                    if (date == null)
+                    {
+                        cmd.CommandText =
+                            @"SELECT * 
+                            FROM dbo.NewsItem";
+                    }
+                    else
+                    {
+                        //20081220 00:00:00.000
+                        var dateFormatBegin = date.Value.ToString("yyyyMMdd 00:00:00.000"); 
+                        var dateFormatEnd = date.Value.AddDays(1).ToString("yyyyMMdd 00:00:00.000");
+                        cmd.CommandText =
+                            @"SELECT *
+                            FROM dbo.NewsItem
+                            WHERE (dateCreated >= '" + dateFormatBegin + @"'
+                            AND dateCreated < '" + dateFormatEnd + @"')
+                            OR (dateUpdated >= '" + dateFormatBegin + @"'
+                            AND dateUpdated < '" + dateFormatEnd + @"')";
+                    }
 
                     var reader = cmd.ExecuteReader();
                     var items = new List<NewsItem>();
-                    
-                    /*
-                    while (reader.Read())
-                    {
-                        var item = new NewsItem((int)reader["id"])
-                        {
-                            Subject = reader["subject"].ToString(),
-                            Text = reader["text"].ToString(),
-                            Active = (bool) reader["active"]
-                        };
-                        items.Add(item);
-                    }
-                    */
-                    /*
-                    for (int i = 0; i < reader.Depth; i++)
-                    {
-                        items.Add(CreateNewsItemByReader(reader));
-                    }*/
                     NewsItem newsItem = null;
 
                     while ((newsItem = CreateNewsItemByReader(reader)) != null)
@@ -87,7 +85,6 @@ namespace DataAccess.Repositories
                     }
                     return items;
                 }
-
             }
         }
 

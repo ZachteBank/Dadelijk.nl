@@ -61,7 +61,17 @@ namespace Dadelijk.nl
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=CMS}/{action=Login}/{id?}");
+                    template: "{controller=General}/{action=Index}");
+
+                routes.MapRoute(
+                    name: "login",
+                    template: "inloggen",
+                    defaults: new { controller = "CMS", action = "Login" });
+
+                routes.MapRoute(
+                    name: "article",
+                    template: "artikel/{id?}/{*subject}",
+                    defaults: new { controller = "General", action = "NewsItem" });
             });
         }
     }

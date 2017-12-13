@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Models.NewsItem>
+
+@{
+    ViewData["Title"] = "Home Page";
+    var today = DateTime.Today;
+    var date = new DateTime(ViewBag.Date);
+    var yesterDay = date.AddDays(-1);
+    var tommorow = date.AddDays(1);
+
+}
+
+
+@section Content{
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h4>Nieuws berichten van <b>@date.ToString("D")</b></h4>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-12 alignSpanVerticalMiddle"><span><small>@(item.DateUpdated == null ? item.DateCreated.ToString("t") : item.DateUpdated.Value.ToString("t"))</small> - </span><span class="newsItemListItem"><a asp-controller="General" asp-action="NewsItem" asp-route-id="@item.Id" asp-route-subject="@item.Subject.Replace(" ", "-")">@item.Subject</a></span></div>
+                }
+                <div class="clearfix"></div>
+                <div class="ln_solid"></div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                    @if (today.Year != date.Year || today.Month != date.Month || today.Day != date.Day)
+                    {
+                        <a asp-controller="General" asp-action="AllNewsItems" asp-route-year="@today.Year" asp-route-month="@today.Month" asp-route-day="@today.Day">Vandaag</a><text> - </text>
+                        <a asp-controller="General" asp-action="AllNewsItems" asp-route-year="@tommorow.Year" asp-route-month="@tommorow.Month" asp-route-day="@tommorow.Day">Later</a><text> - </text>
+                    }
+                    <a asp-controller="General" asp-action="AllNewsItems" asp-route-year="@yesterDay.Year" asp-route-month="@yesterDay.Month" asp-route-day="@yesterDay.Day">Eerder</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

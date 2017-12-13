@@ -1,0 +1,22 @@
+﻿@model Models.NewsItem
+
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+
+@section Content{
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h4><b>@Model.Subject</b> - @(Model.DateUpdated == null ? Model.DateCreated.ToString("f") : Model.DateUpdated.Value.ToString("f"))</h4>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                @Html.Raw(Model.Text)
+            </div>
+        </div>
+    </div>
+}

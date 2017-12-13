@@ -43,3 +43,9 @@ textarea {
 .text-uppercase-first {
     text-transform: capitalize;
 }
+.newsItemListItem {
+    font-size: 17px;
+}
+.alignSpanVerticalMiddle span {
+    vertical-align: middle;
+}
