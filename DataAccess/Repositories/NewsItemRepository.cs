@@ -22,7 +22,7 @@ namespace DataAccess.Repositories
             {
                 Subject = reader["subject"].ToString(),
                 Text = reader["text"].ToString(),
-                Active = (bool)reader["active"],
+                Active = (bool)reader["active"]
             };
 
             AddDateCreatedAndDateUpdated(newsItem, reader);

@@ -11,7 +11,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h4>Nieuwsbericht toevoegen</h4>
+                <h4>Alle nieuwsberichten</h4>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
@@ -22,26 +22,38 @@
                             Onderwerp
                         </td>
                         <td>
+                            Aangemaakt
+                        </td>
+                        <td>
+                            Aangepast
+                        </td>
+                        <td>
                             Acties
                         </td>
                     </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>
-                                    @item.Subject
-                                </td>
-                                <td>
-                                    <a href="#" class="btn btn-primary btn-sm" title="Nieuwsbericht bekijken"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                    <a asp-controller="CMS" asp-action="EditNewsItem" asp-route-newsItemId="@item.Id" class="btn btn-primary btn-sm" title="Wijzigen"><i class="fa fa-edit" aria-hidden="true"></i></a>
-                                    <a href="#" class="confirmClick btn btn-danger btn-sm" title="Uitzetten">
-                                        <i class="fa fa-ban" aria-hidden="true"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        }
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.Subject
+                            </td>
+                            <td class="text-uppercase-first">
+                                @item.DateCreated.ToString("f")
+                            </td>
+                            <td class="text-uppercase-first">
+                                @(item.DateUpdated == null ? "Nooit" : item.DateUpdated.Value.ToString("f"))
+                            </td>
+                            <td>
+                                <a href="#" class="btn btn-primary btn-sm" title="Nieuwsbericht bekijken"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                <a asp-controller="CMS" asp-action="EditNewsItem" asp-route-newsItemId="@item.Id" class="btn btn-primary btn-sm" title="Wijzigen"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                <a asp-controller="CMS" asp-action="ChangeStateNewsItem" asp-route-newsItemId="@item.Id" class="confirmClick btn btn-@(item.Active ? "danger" : "success") btn-sm" title="@(item.Active ? "Uitzetten" : "Aanzetten")">
+                                    <i class="fa fa-@(item.Active ? "toggle-off" : "toggle-on")" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
                     </tbody>
                 </table>
             </div>

@@ -39,3 +39,7 @@ textarea {
 .sidebar-footer a {
     width: 50%;
 }
+
+.text-uppercase-first {
+    text-transform: capitalize;
+}

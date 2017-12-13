@@ -41,7 +41,7 @@ namespace Logic
 
         public IEnumerable<NewsItem> AllNewsItems(bool onlyActive = true)
         {
-            return onlyActive ? _newsItemRepository.GetAllNewsItems().Where(x => x.Active = true) : _newsItemRepository.GetAllNewsItems();
+            return onlyActive ? _newsItemRepository.GetAllNewsItems().Where(x => x.Active) : _newsItemRepository.GetAllNewsItems();
         }
 
         public void EditNewsItem(NewsItem newsItem)
