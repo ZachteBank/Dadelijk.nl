@@ -10,8 +10,6 @@ namespace Models
         {
         }
 
-        public int Id { get; private set; }
-
         private string _email;
         public string Email { get => _email; set => _email = value ?? throw new ArgumentNullException("Email"); }
 

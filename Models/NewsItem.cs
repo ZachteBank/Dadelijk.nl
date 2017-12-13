@@ -14,8 +14,6 @@ namespace Models
 
         private string _text;
 
-        public bool Active { get; set; }
-
         public string Text
         {
             get => _text;
@@ -25,5 +23,8 @@ namespace Models
                 _text = value;
             }
         }
+
+        public bool Active { get; set; }
+
     }
 }
