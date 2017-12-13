@@ -127,8 +127,7 @@ namespace Dadelijk.nl.Controllers
             newsItem.Active = active;
 
             _tms.UpdateNewsItem(newsItem);
-
-            ViewBag.Success = "Update succesvol";
+            ViewBag.Success = "Update is gelukt";
 
             return View(newsItem);
         }

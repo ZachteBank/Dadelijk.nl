@@ -107,14 +107,20 @@ namespace DataAccess.Repositories
             {
                 var command = new SqlCommand(null, connection)
                 {
-                    CommandText = @"UPDATE [dbo].NewsItem SET subject = @subject, text = @text, active=@active WHERE id = @id"
+                    CommandText = @"UPDATE [dbo].NewsItem SET subject = @subject, text = @text, active=@active WHERE id = @id SELECT GETDATE()"
                 };
 
                 command.Parameters.Add(new SqlParameter("id", newsItem.Id));
                 command.Parameters.Add(new SqlParameter("subject", newsItem.Subject));
                 command.Parameters.Add(new SqlParameter("text", newsItem.Text));
                 command.Parameters.Add(new SqlParameter("active", newsItem.Active));
-                command.ExecuteNonQuery();
+                //command.ExecuteNonQuery();
+                var reader = command.ExecuteReader();
+                if (!reader.Read())
+                {
+                    return;
+                }
+                SetDateUpdatedOfModel(newsItem, (DateTime)reader.GetDateTime(0));
             }
 
         }

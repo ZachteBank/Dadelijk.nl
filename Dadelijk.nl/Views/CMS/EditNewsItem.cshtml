@@ -8,7 +8,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h4>Nieuwsbericht toevoegen</h4>
+                <h4>Nieuwsbericht aanpassen - <small>@Model.Subject</small></h4>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content form-horizontal form-label-left">
@@ -37,7 +37,25 @@
                             Actief <span class="required">*</span>
                         </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input name="active" id="active" type="checkbox" value="true" class="js-switch" checked />
+                            <input name="active" id="active" type="checkbox" value="true" class="js-switch" @(Model.Active ? "checked" : "") />
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="dateCreated">
+                            Aangemaakt
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" id="dateCreated" class="form-control" disabled="disabled" value="@Model.DateCreated.ToString("F")">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-12" for="dateUpdated">
+                            Voor het laatst aangepast:
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" id="dateUpdated" class="form-control" disabled="disabled" value="@(Model.DateUpdated == null ? "nooit" : Model.DateUpdated.Value.ToString("F"))">
                         </div>
                     </div>
                     
@@ -47,7 +65,7 @@
 
                     <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                            <button type="submit" class="btn btn-primary">Toevoegen</button>
+                            <button type="submit" class="btn btn-primary">Aanpassen</button>
                         </div>
                     </div>
                 </form>
