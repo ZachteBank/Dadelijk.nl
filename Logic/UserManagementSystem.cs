@@ -37,7 +37,7 @@ namespace Logic
             return null;
         }
 
-        public Account Register(string email, string password)
+        public Account Register(string email, string password, string username)
         {
             if (GetAccountByEmail(email) != null)
             {
@@ -46,7 +46,8 @@ namespace Logic
             var account = new Account
             {
                 Email = email,
-                PassHash = HashPassword(password)
+                PassHash = HashPassword(password),
+                UserName = username
             };
 
             return _accountRespository.CreateAccount(account) ? account : null;

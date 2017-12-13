@@ -41,10 +41,10 @@
     
     @foreach (var reaction in Model.Reactions)
     {
-        <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h4>Reactie - @reaction.Account.UserName</h4>
+                    <h4>Reactie - <b>@reaction.Account.UserName</b></h4>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -52,6 +52,7 @@
                 </div>
             </div>
         </div>
+        <div class="clearfix"></div>
     }
     
 

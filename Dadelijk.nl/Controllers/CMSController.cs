@@ -66,7 +66,7 @@ namespace Dadelijk.nl.Controllers
                 //Register
                 try
                 {
-                    account = _ums.Register(email, password);
+                    account = _ums.Register(email, password, username);
                 }
                 catch (Exception e)
                 {
