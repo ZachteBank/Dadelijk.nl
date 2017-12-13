@@ -19,11 +19,10 @@ namespace DataAccess.Repositories
                 return null;
             }
             var accountRepository = new AccountRespository(Settings);
-            var newsItemRepository = new NewsItemRepository(Settings);
 
             var reaction =  new Reaction((int)reader["id"])
             {
-                NewsItem = newsItemRepository.GetNewsItemById((int)reader["newsItemId"]),
+                NewsItemId = (int)reader["newsItemId"],
                 Account = accountRepository.GetAccountById((int)reader["accountId"]),
                 ParentReaction = GetReactionById(reader["reactionId"] as int? ?? 0),
                 Text = reader["text"].ToString(),
@@ -135,7 +134,7 @@ namespace DataAccess.Repositories
                                         VALUES (@newsItemId, @accountId, @reactionId, @text, @active);
                                         SELECT SCOPE_IDENTITY() AS Id";
 
-                command.Parameters.Add(new SqlParameter("newsItemId", reaction.NewsItem.Id));
+                command.Parameters.Add(new SqlParameter("newsItemId", reaction.NewsItemId));
                 command.Parameters.Add(new SqlParameter("accountId", reaction.Account.Id));
                 command.Parameters.Add(new SqlParameter("reactionId", (object)reaction.ParentReaction?.Id ?? DBNull.Value));
                 command.Parameters.Add(new SqlParameter("text", reaction.Text));

@@ -9,9 +9,7 @@ namespace Models
         public Reaction(int id = 0) : base(id)
         {
         }
-
-
-        public NewsItem NewsItem { get; set; }
+       public int NewsItemId { get; set; }
         public Account Account { get; set; }
         public Reaction ParentReaction { get; set; }
 

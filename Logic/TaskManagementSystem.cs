@@ -29,7 +29,7 @@ namespace Logic
             var reaction = new Reaction()
             {
                 Account = _accountRespository.GetAccountById(accountId),
-                NewsItem = _newsItemRepository.GetNewsItemById(newsItemId),
+                NewsItemId = newsItemId,
                 ParentReaction = reactionId > 0 ? _reactionRepository.GetReactionById(reactionId) : null,
                 Text = text,
             };
