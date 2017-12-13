@@ -1,0 +1,52 @@
+/*    ==Scripting Parameters==
+
+    Source Server Version : SQL Server 2016 (13.0.4422)
+    Source Database Engine Edition : Microsoft SQL Server Express Edition
+    Source Database Engine Type : Standalone SQL Server
+
+    Target Server Version : SQL Server 2016
+    Target Database Engine Edition : Microsoft SQL Server Express Edition
+    Target Database Engine Type : Standalone SQL Server
+*/
+
+USE [bram]
+GO
+
+/****** Object:  Table [dbo].[Reaction]    Script Date: 16-11-2017 11:47:26 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Reaction](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[newsItemId] [int] NOT NULL, FOREIGN KEY REFERENCES NewsItem(id),
+	[accountId] [int](11) NOT NULL, FOREIGN KEY REFERENCES Account(id),
+	[reactionId] [int](11) NULL, FOREIGN KEY REFERENCES Reaction(id),
+	[text] [varchar](MAX) NOT NULL,
+	[active] [bit] NOT NULL,
+	[dateCreated] [datetime] NOT NULL,
+	[dateUpdated] [datetime] NULL,
+ CONSTRAINT [PK_Reaction] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Reaction] ADD  CONSTRAINT [DF_Reaction_dateCreated]  DEFAULT (getdate()) FOR [dateCreated]
+GO
+
+ALTER TABLE [dbo].[Reaction] ADD  CONSTRAINT [DF_Reaction_active]  DEFAULT (1) FOR [active]
+GO
+
+CREATE TRIGGER trg_UpdateTimeEntryNews
+ON dbo.Reaction
+AFTER UPDATE
+AS
+    UPDATE dbo.Reaction
+    SET dateUpdated = GETDATE()
+    WHERE id IN (SELECT DISTINCT id FROM Inserted)
+
+
