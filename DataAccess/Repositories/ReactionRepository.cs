@@ -137,7 +137,7 @@ namespace DataAccess.Repositories
 
                 command.Parameters.Add(new SqlParameter("newsItemId", reaction.NewsItem.Id));
                 command.Parameters.Add(new SqlParameter("accountId", reaction.Account.Id));
-                command.Parameters.Add(new SqlParameter("reactionId", reaction.ParentReaction?.Id));
+                command.Parameters.Add(new SqlParameter("reactionId", (object)reaction.ParentReaction?.Id ?? DBNull.Value));
                 command.Parameters.Add(new SqlParameter("text", reaction.Text));
                 command.Parameters.Add(new SqlParameter("active", reaction.Active));
 

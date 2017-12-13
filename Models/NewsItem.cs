@@ -10,8 +10,9 @@ namespace Models
         public NewsItem(int id = 0) : base(id)
         {
         }
-        
+
         public IEnumerable<Reaction> Reactions { get; set; }
+
 
         public string Subject { get; set; }
 
