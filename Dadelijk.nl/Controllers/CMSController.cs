@@ -117,5 +117,23 @@ namespace Dadelijk.nl.Controllers
             return View(newsItem);
         }
 
+        [HttpPost]
+        public IActionResult EditNewsItem(int newsItemId, string subject, string text, bool active)
+        {
+            var newsItem = _tms.GetNewsItemById(newsItemId);
+
+            newsItem.Subject = subject;
+            newsItem.Text = text;
+            newsItem.Active = active;
+
+            _tms.UpdateNewsItem(newsItem);
+
+            ViewBag.Success = "Update succesvol";
+
+            return View(newsItem);
+        }
+
+
+
     }
 }

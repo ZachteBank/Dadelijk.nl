@@ -119,11 +119,11 @@
             <!-- /top navigation -->
             
             <!-- page content -->
-            @Html.Partial("~/Views/Partials/Alert.cshtml")
             <div class="right_col" role="main">
+                @Html.Partial("~/Views/Partials/Alert.cshtml")
                 <div class="">
                     <div class="clearfix"></div>
-                    
+
                     @RenderSection("Content", true)
                 </div>
                 <div class="clearfix"></div>
