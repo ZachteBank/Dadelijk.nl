@@ -88,5 +88,16 @@ namespace Logic
         {
             _newsItemRepository.UpdateNewsItem(newsItem);
         }
+
+        public IEnumerable<Reaction> GetAllReactionsFromNewsItemFormatted(NewsItem newsItem)
+        {
+            return GetAllReactionsFromNewsItemFormatted(newsItem.Id);
+        }
+
+        public IEnumerable<Reaction> GetAllReactionsFromNewsItemFormatted(int newsItemId)
+        {
+            var reactions = _reactionRepository.GetAllReactionsByNewsItemId(newsItemId).OrderBy(x => x.DateCreated);
+            return null;
+        }
     }
 }

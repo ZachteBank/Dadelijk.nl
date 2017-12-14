@@ -24,5 +24,23 @@ namespace Models
             }
         }
         public bool Active { get; set; }
+
+        public int GetOffset()
+        {
+            if (ParentReaction == null)
+            {
+                return 0;
+            }
+            int i = 1;
+
+            var parent = ParentReaction;
+
+            while (parent.ParentReaction != null)
+            {
+                parent = parent.ParentReaction;
+                i++;
+            }
+            return i;
+        }
     }
 }
