@@ -1,6 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Http
-@using Models
-@model Models.NewsItem
+@model Dadelijk.nl.ViewModels.NewsItemAndReaction
 
 @{
     ViewData["Title"] = "Home Page";
@@ -12,11 +11,11 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h4><b>@Model.Subject</b> - @(Model.DateUpdated == null ? Model.DateCreated.ToString("f") : Model.DateUpdated.Value.ToString("f"))</h4>
+                <h4><b>@Model.NewsItem.Subject</b> - @(Model.NewsItem.DateUpdated == null ? Model.NewsItem.DateCreated.ToString("f") : Model.NewsItem.DateUpdated.Value.ToString("f"))</h4>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                @Html.Raw(Model.Text)
+                @Html.Raw(Model.NewsItem.Text)
                 
                 <div class="ln_solid"></div>
 
@@ -55,7 +54,7 @@
     }
     @foreach (var reaction in Model.Reactions)
     {
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-md-offset-@reaction.GetOffset()">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-sm-offset-@reaction.GetOffset(8)">
             <div class="x_panel">
                 <div class="x_title">
                     <h4>@reaction.Account.UserName @if(reaction.ParentReaction != null){<span>@@@reaction.ParentReaction.Account.UserName</span>}</h4>
@@ -68,7 +67,7 @@
 
                     <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 text-right pull-right">
-                            <a class="reply" data-username="@reaction.Account.UserName" data-newsId="@reaction.NewsItemId" data-reactionId="@reaction.Id" href="#">Reageren</a>
+                            <a class="reply" data-username="@reaction.Account.UserName" data-newsId="@reaction.NewsItemId" data-reactionId="@reaction.Id" href="#Reaction">Reageren</a>
                         </div>
                     </div>
                 </div>
@@ -89,7 +88,7 @@
             <div class="x_content form-horizontal form-label-left">
 
                 <form asp-action="AddReaction" data-parsley-validate method="post">
-                    <input type="hidden" name="newsItemId" value="@Model.Id" />
+                    <input type="hidden" name="newsItemId" value="@Model.NewsItem.Id" />
                     <input type="hidden" name="reactionId" class="reactionId" value="0" />
                     <div class="form-group">
                         <label class="control-label col-md-2 col-sm-2 col-xs-12" for="text">

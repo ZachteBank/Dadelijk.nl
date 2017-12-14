@@ -96,8 +96,33 @@ namespace Logic
 
         public IEnumerable<Reaction> GetAllReactionsFromNewsItemFormatted(int newsItemId)
         {
-            var reactions = _reactionRepository.GetAllReactionsByNewsItemId(newsItemId).OrderBy(x => x.DateCreated);
-            return null;
+            var finalList = new List<Reaction>();
+
+            List<Reaction> reactions = _reactionRepository.GetAllReactionsByNewsItemId(newsItemId).OrderBy(x => x.DateCreated).ToList();
+            while (reactions.Any())
+            {
+                var maxOffset = reactions.Max(x => x.GetOffset());
+                var tmpReactions = reactions.Where(x => x.GetOffset() == maxOffset).ToList();
+                for (int i = 0; i < tmpReactions.Count();i++)
+                {
+                    var reaction = tmpReactions[i];
+                    reactions.Remove(reaction);
+                    finalList.Add(reaction);
+
+                    var tmpReaction = reaction;
+
+                    while (tmpReaction.ParentReaction != null)
+                    {
+                        if (finalList.All(x => x.Id != tmpReaction.ParentReaction.Id))
+                        {
+                            reactions.RemoveAt(reactions.FindIndex(x => x.Id == tmpReaction.ParentReaction.Id));
+                            finalList.Insert(finalList.IndexOf(tmpReaction), tmpReaction.ParentReaction);
+                        }
+                        tmpReaction = tmpReaction.ParentReaction;
+                    }
+                }
+            }
+            return finalList;
         }
     }
 }

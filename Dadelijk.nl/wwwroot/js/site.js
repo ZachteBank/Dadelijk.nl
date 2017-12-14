@@ -22,7 +22,6 @@ $(document).on("click", ".confirmClick", function (e) {
 $(document).on("click",
     ".reply",
     function(e) {
-        e.preventDefault();
         $(".reactionUsername").html(" - " + $(this).data("username"));
         $(".reactionId").val(Number($(this).data("reactionid")));
     });

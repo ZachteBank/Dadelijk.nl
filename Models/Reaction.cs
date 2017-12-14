@@ -25,7 +25,7 @@ namespace Models
         }
         public bool Active { get; set; }
 
-        public int GetOffset()
+        public int GetOffset(int max = 12)
         {
             if (ParentReaction == null)
             {
@@ -35,7 +35,7 @@ namespace Models
 
             var parent = ParentReaction;
 
-            while (parent.ParentReaction != null)
+            while (parent.ParentReaction != null && i < max)
             {
                 parent = parent.ParentReaction;
                 i++;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Dadelijk.nl.ViewModels;
 using Logic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -43,7 +44,13 @@ namespace Dadelijk.nl.Controllers
                 ViewBag.Success = TempData["Success"].ToString();
             if (TempData["Error"] != null)
                 ViewBag.Error = TempData["Error"].ToString();
-            return View(newsItem);
+
+            var newsItemAndReactions = new NewsItemAndReaction()
+            {
+                NewsItem = newsItem,
+                Reactions = _tms.GetAllReactionsFromNewsItemFormatted(newsItem.Id)
+            };
+            return View(newsItemAndReactions);
         }
 
         [HttpPost]
