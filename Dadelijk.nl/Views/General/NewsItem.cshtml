@@ -52,9 +52,12 @@
         </div>
         <div class="clearfix"></div>
     }
+    <div class="col-md-12">
+        <h2>@Model.Reactions.Count() reacties</h2>
+    </div>
     @foreach (var reaction in Model.Reactions)
     {
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-sm-offset-@reaction.GetOffset(8)">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-sm-offset-@reaction.GetOffset(8) halfOffset">
             <div class="x_panel">
                 <div class="x_title">
                     <h4>@reaction.Account.UserName @if(reaction.ParentReaction != null){<span>@@@reaction.ParentReaction.Account.UserName</span>}</h4>

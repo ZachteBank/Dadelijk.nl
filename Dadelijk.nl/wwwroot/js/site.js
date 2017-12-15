@@ -24,4 +24,14 @@ $(document).on("click",
     function(e) {
         $(".reactionUsername").html(" - " + $(this).data("username"));
         $(".reactionId").val(Number($(this).data("reactionid")));
+});
+
+$(document).ready(function () {
+    var elm = $(".halfOffset");
+    elm.each(function(index) {
+        $(this).css("margin-left", ($(this).css("margin-left").replace("px", "") / 2) + "px");
+        console.log("Set margin-left to half");
+        console.log($(this).css("margin-left"));
     });
+
+});
