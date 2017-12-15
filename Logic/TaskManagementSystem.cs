@@ -66,7 +66,7 @@ namespace Logic
 
         public IEnumerable<NewsItem> AllNewsItems(DateTime date, bool onlyActive = true)
         {
-            return onlyActive ? _newsItemRepository.GetAllNewsItems(date).Where(x => x.Active) : _newsItemRepository.GetAllNewsItems(date);
+            return (onlyActive ? _newsItemRepository.GetAllNewsItems(date).Where(x => x.Active) : _newsItemRepository.GetAllNewsItems(date)).OrderByDescending(x => x.DateUpdated).ThenByDescending(x => x.DateCreated);
         }
 
         public void EditNewsItem(NewsItem newsItem)

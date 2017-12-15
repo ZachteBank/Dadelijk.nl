@@ -13,6 +13,8 @@ namespace Models
 
         public int Id { get; protected set; }
 
+        public DateTime DateUpdatedOrCreated { get => DateUpdated ?? DateCreated}
+
         public DateTime DateCreated { get; set; }
 
         public DateTime? DateUpdated { get; set; }
