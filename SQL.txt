@@ -3,3 +3,9 @@ SQL: left join
 SELECT a.id, a.name FROM [bram].[dbo].[Tag] as a LEFT JOIN [bram].[dbo].[TagNewsItem] as b ON b.tagId=a.id WHERE b.newsItemId=5
 
 Deze haalt alle tags op van een nieuwsbericht (met id 5)
+
+SQL: group by
+
+SELECT a.newsItemId, count(*) FROM [bram].[dbo].[TagNewsItem] as a GROUP BY (a.newsItemId)
+
+Deze telt het aantal reacties voor een nieuwsbericht

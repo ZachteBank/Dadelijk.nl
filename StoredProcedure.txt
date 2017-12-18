@@ -1,0 +1,12 @@
+USE [bram]
+GO
+
+CREATE PROCEDURE CountTagsByNewsItem
+(
+@newsItemId INT OUT,
+@count INT OUT
+)
+AS
+BEGIN
+SELECT @newsItemId = a.newsItemId, @count = count(*) FROM [bram].[dbo].[TagNewsItem] as a GROUP BY (a.newsItemId)
+END
