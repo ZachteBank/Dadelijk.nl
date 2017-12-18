@@ -12,6 +12,7 @@ namespace Models
         }
 
         public IEnumerable<Reaction> Reactions { get; set; }
+        public IEnumerable<Tag> Tags { get; set; }
 
 
         public string Subject { get; set; }

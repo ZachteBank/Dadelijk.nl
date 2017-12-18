@@ -19,13 +19,15 @@ namespace DataAccess.Repositories
                 return null;
             }
             var reactionRepository = new ReactionRepository(Settings);
+            var tagRepository = new TagRepository(Settings);
 
             var newsItem =  new NewsItem((int)reader["id"])
             {
                 Subject = reader["subject"].ToString(),
                 Text = reader["text"].ToString(),
                 Active = (bool)reader["active"],
-                Reactions = reactionRepository.GetAllReactionsByNewsItemId((int)reader["id"])
+                Reactions = reactionRepository.GetAllReactionsByNewsItemId((int)reader["id"]),
+                Tags = tagRepository.GetAllTags((int)reader["id"])
             };
 
             AddDateCreatedAndDateUpdated(newsItem, reader);
