@@ -4,8 +4,41 @@ SELECT a.id, a.name FROM [bram].[dbo].[Tag] as a LEFT JOIN [bram].[dbo].[TagNews
 
 Deze haalt alle tags op van een nieuwsbericht (met id 5)
 
+__________________________________________________________________FOUT
+
+SQL: left outer join
+
+SELECT a.id, a.subject, b.tagId FROM [bram].[dbo].[NewsItem] as a LEFT OUTER JOIN [bram].[dbo].[TagNewsItem] as b ON a.id = b.newsItemId
+
+Deze haalt alle nieuwsberichten op met bij behorende tag
+
+__________________________________________________________________
+
+SQL: left outer join
+
+SELECT a.id, a.subject, c.name
+FROM [bram].[dbo].[NewsItem] as a 
+LEFT OUTER JOIN [bram].[dbo].[TagNewsItem] as b 
+	ON a.id = b.newsItemId
+LEFT JOIN [bram].[dbo].[Tag] as c 
+	ON c.id = b.tagId
+
+Deze haalt alle nieuwberichten op met bij behorende tag name
+
+__________________________________________________________________
+
 SQL: group by
 
 SELECT a.newsItemId, count(*) FROM [bram].[dbo].[TagNewsItem] as a GROUP BY (a.newsItemId)
 
-Deze telt het aantal reacties voor een nieuwsbericht
+Deze telt het aantal tags voor een nieuwsbericht
+
+__________________________________________________________________
+
+SQL: group by
+
+SELECT a.newsItemId, count(*) FROM [bram].[dbo].[Reaction] as a GROUP BY (a.newsItemId)
+
+Deze telt het aantal tags voor een nieuwsbericht
+
+__________________________________________________________________

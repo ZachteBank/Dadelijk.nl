@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using Models;
@@ -124,6 +125,28 @@ namespace DataAccess.Repositories
                 }
                 SetDateUpdatedOfModel(newsItem, (DateTime)reader.GetDateTime(0));
             }
+
+        }
+
+        public int GetAllNewsItemsAndTags(int newsItemId)
+        {
+            using (var connection = GetConnection())
+            {
+                using (var command = new SqlCommand("CountTagsByNewsItem", connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                })
+                {
+                    command.Parameters.Add(new SqlParameter("newsItemId", newsItemId));
+
+                    var reader = command.ExecuteReader();
+                    if (!reader.Read())
+                    {
+                        return (int) reader["count"];
+                    }
+                }
+            }
+            throw new Exception("Something went wrong with the database");
 
         }
 
