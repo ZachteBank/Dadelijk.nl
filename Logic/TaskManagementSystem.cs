@@ -66,7 +66,7 @@ namespace Logic
 
         public IEnumerable<NewsItem> AllNewsItems(DateTime date, bool onlyActive = true)
         {
-            return (onlyActive ? _newsItemRepository.GetAllNewsItems(date).Where(x => x.Active) : _newsItemRepository.GetAllNewsItems(date)).OrderByDescending(x => x.DateUpdated).ThenByDescending(x => x.DateCreated);
+            return (onlyActive ? _newsItemRepository.GetAllNewsItems(date).Where(x => x.Active) : _newsItemRepository.GetAllNewsItems(date)).OrderByDescending(x => x.DateUpdatedOrCreated);
         }
 
         public void EditNewsItem(NewsItem newsItem)
@@ -98,7 +98,7 @@ namespace Logic
         {
             var finalList = new List<Reaction>();
 
-            List<Reaction> reactions = _reactionRepository.GetAllReactionsByNewsItemId(newsItemId).OrderBy(x => x.DateCreated).ToList();
+            List<Reaction> reactions = _reactionRepository.GetAllReactionsByNewsItemId(newsItemId).OrderBy(x => x.DateUpdatedOrCreated).ToList();
             while (reactions.Any())
             {
                 var maxOffset = reactions.Max(x => x.GetOffset());
