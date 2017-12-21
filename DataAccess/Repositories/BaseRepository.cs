@@ -26,7 +26,8 @@ namespace DataAccess.Repositories
 
         protected void AddDateCreatedAndDateUpdated(BaseModel baseModel, SqlDataReader reader)
         {
-            baseModel.DateCreated = Convert.ToDateTime(reader["dateCreated"].ToString());
+            var dateCreated = reader["dateCreated"].ToString();
+            baseModel.DateCreated = Convert.ToDateTime(dateCreated);
             baseModel.DateUpdated = !Convert.IsDBNull(reader["dateUpdated"])
                 ? Convert.ToDateTime(reader["dateUpdated"].ToString())
                 : (DateTime?) null;

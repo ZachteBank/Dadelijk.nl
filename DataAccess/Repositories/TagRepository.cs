@@ -44,7 +44,6 @@ namespace DataAccess.Repositories
                     var reader = cmd.ExecuteReader();
                     return CreateTagByReader(reader);
                 }
-
             }
         }
         public Tag GetTagByName(string name)
@@ -62,7 +61,6 @@ namespace DataAccess.Repositories
                     var reader = cmd.ExecuteReader();
                     return CreateTagByReader(reader);
                 }
-
             }
         }
 
@@ -81,7 +79,7 @@ namespace DataAccess.Repositories
                     else
                     {
                         cmd.CommandText =
-                            @"SELECT a.id, a.name FROM [bram].[dbo].[Tag] as a LEFT JOIN [bram].[dbo].[TagNewsItem] as b ON b.tagId=a.id WHERE b.newsItemId=@id";
+                            @"SELECT a.id, a.name, a.dateCreated, a.dateUpdated FROM [bram].[dbo].[Tag] as a LEFT JOIN [bram].[dbo].[TagNewsItem] as b ON b.tagId=a.id WHERE b.newsItemId=@id";
 
                         cmd.Parameters.Add(new SqlParameter("id", newsItemId));
                     }

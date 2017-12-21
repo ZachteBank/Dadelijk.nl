@@ -179,7 +179,33 @@ namespace DataAccess.Repositories
                     return false;
                 }
                 SetIdOfModel(newsItem, (int)reader.GetDecimal(0));
+
+                var tagRepository = new TagRepository(Settings);
+
+                foreach (var tag in newsItem.Tags)
+                {
+                    tagRepository.CreateOrAddTag(tag);
+                    tagRepository.BindTagToNewsItem(tag, newsItem.Id);
+                }
                 return true;
+            }
+        }
+
+        public void RemoveNewsItem(NewsItem newsItem)
+        {
+            if (newsItem == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            using (var connection = GetConnection())
+            {
+                var command = new SqlCommand(null, connection);
+                command.CommandText = @"DELETE FROM NewsItem WHERE id=@id";
+
+                command.Parameters.Add(new SqlParameter("id", newsItem.Id));
+
+                command.ExecuteNonQuery();
             }
         }
     }

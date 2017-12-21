@@ -9,6 +9,8 @@ namespace Models
     {
         public NewsItem(int id = 0) : base(id)
         {
+            Reactions = new List<Reaction>();
+            Tags = new List<Tag>();
         }
 
         public IEnumerable<Reaction> Reactions { get; set; }
@@ -24,6 +26,7 @@ namespace Models
             get => _text;
             set
             {
+                if(value == null) throw new ArgumentNullException();
                 value = value.Replace("script", "niceTry");
                 _text = value;
             }

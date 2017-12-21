@@ -124,5 +124,10 @@ namespace Logic
             }
             return finalList;
         }
+
+        public void DeleteNewsItem(NewsItem newsItem)
+        {
+            _newsItemRepository.RemoveNewsItem(newsItem);
+        }
     }
 }
