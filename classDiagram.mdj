@@ -486,6 +486,733 @@
 							"templateParameterCompartment": {
 								"$ref": "AAAAAAFgRUAX3aRtEiU="
 							}
+						},
+						{
+							"_type": "UMLClassView",
+							"_id": "AAAAAAFgc4aIXQQ5Btk=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"model": {
+								"$ref": "AAAAAAFgc4aIXAQ36Tk="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAFgc4aIXgQ64ko=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4aIXQQ5Btk="
+									},
+									"model": {
+										"$ref": "AAAAAAFgc4aIXAQ36Tk="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFgc4aIXgQ7RfI=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgQ64ko="
+											},
+											"visible": false,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 0,
+											"top": -16,
+											"width": 0,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"horizontalAlignment": 2,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFgc4aIXgQ83co=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgQ64ko="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;1",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 85,
+											"top": 335,
+											"width": 526.32861328125,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "TaskManagementSystem",
+											"horizontalAlignment": 2,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFgc4aIXgQ9Iwo=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgQ64ko="
+											},
+											"visible": false,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 0,
+											"top": -16,
+											"width": 73.67724609375,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "(from Model)",
+											"horizontalAlignment": 2,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAFgc4aIXgQ+SqE=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgQ64ko="
+											},
+											"visible": false,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 0,
+											"top": -16,
+											"width": 0,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"horizontalAlignment": 1,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										}
+									],
+									"visible": true,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 80,
+									"top": 328,
+									"width": 536.32861328125,
+									"height": 25,
+									"autoResize": false,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAFgc4aIXgQ7RfI="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAFgc4aIXgQ83co="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAFgc4aIXgQ9Iwo="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAFgc4aIXgQ+SqE="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAFgc4aIXgQ/98Y=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4aIXQQ5Btk="
+									},
+									"model": {
+										"$ref": "AAAAAAFgc4aIXAQ36Tk="
+									},
+									"subViews": [
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFgc4bAYQRkruA=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgQ/98Y="
+											},
+											"model": {
+												"$ref": "AAAAAAFgc4bAQARhOHw="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 85,
+											"top": 358,
+											"width": 526.32861328125,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "-_accountRepository: AccountRespository",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFgc4co3gRrp5E=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgQ/98Y="
+											},
+											"model": {
+												"$ref": "AAAAAAFgc4coyARoKTI="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 85,
+											"top": 373,
+											"width": 526.32861328125,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "-_newsItemRepository: NewsItemRepository",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFgc4eJlARyTes=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgQ/98Y="
+											},
+											"model": {
+												"$ref": "AAAAAAFgc4eJfgRv2+Q="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 85,
+											"top": 388,
+											"width": 526.32861328125,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "-_reactionRepository: ReactionRepository",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										}
+									],
+									"visible": true,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 80,
+									"top": 353,
+									"width": 536.32861328125,
+									"height": 53,
+									"autoResize": false
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAFgc4aIXgRA4NQ=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4aIXQQ5Btk="
+									},
+									"model": {
+										"$ref": "AAAAAAFgc4aIXAQ36Tk="
+									},
+									"subViews": [
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFgc4gQ/gR7YGg=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgRA4NQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFgc4gQ3gR4qxk="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 85,
+											"top": 411,
+											"width": 526.32861328125,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+TaskManagementSystem(connectionString: String)",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFgc4h0zgSEaOU=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgRA4NQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFgc4h0swSBymU="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 85,
+											"top": 426,
+											"width": 526.32861328125,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+CreateReaction(accountId: Int, newsItemId: Int, text: String, reactionId: Int = 0): Boolean",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFgc4sXmgScjHk=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgRA4NQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFgc4sXegSZ3v4="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 85,
+											"top": 441,
+											"width": 526.32861328125,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+AddReaction(reaction: Reaction): Boolean",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFgc4tb9wSlrG4=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgRA4NQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFgc4tb3QSi6zw="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 85,
+											"top": 456,
+											"width": 526.32861328125,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+CreateNewsItem(subject: String, text: String, active: Boolean): Boolean",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFgc4uoygSysC4=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgRA4NQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFgc4uotgSvckA="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 85,
+											"top": 471,
+											"width": 526.32861328125,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+AllNewsItems(onlyActive: Boolean = true): IEnumerable<NewsItem>",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFgc4ySQQTI1d8=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgRA4NQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFgc4ySKQTFLTA="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 85,
+											"top": 486,
+											"width": 526.32861328125,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+AllNewsItems(date: DateTime, onlyActive: Boolean = true): IEnumerable<NewsItem>",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFgc44ojQT0NC8=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgRA4NQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFgc44ocgTxecw="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 85,
+											"top": 501,
+											"width": 526.32861328125,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+EditNewsItem(newsItem: NewsItem)",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFgc45dOwT9V/A=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgRA4NQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFgc45dIQT6yOs="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 85,
+											"top": 516,
+											"width": 526.32861328125,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+AddNewsItem(newsItem: NewsItem): Boolean",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFgc5CeogUIoPI=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgRA4NQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFgc5CeiQUFjPo="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 85,
+											"top": 531,
+											"width": 526.32861328125,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+GetNewsItemById(id: Int): NewsItem",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFgc5TCYgUUqKM=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgRA4NQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFgc5TCSgURrwQ="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 85,
+											"top": 546,
+											"width": 526.32861328125,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+UpdateNewsItem(newsItem: NewsItem)",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFgc5UOJwUdr6A=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgRA4NQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFgc5UODwUaUUQ="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 85,
+											"top": 561,
+											"width": 526.32861328125,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+GetAllReactionsFromNewsItemFormatted(newsItem: NewsItem): IEnumerable<Reaction>",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFgc5Wl+QUpcL4=",
+											"_parent": {
+												"$ref": "AAAAAAFgc4aIXgRA4NQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFgc5Wl4wUmzms="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 85,
+											"top": 576,
+											"width": 526.32861328125,
+											"height": 13,
+											"autoResize": false,
+											"underline": false,
+											"text": "+GetAllReactionsFromNewsItemFormatted(newsItemId: Integer): IEnumerable<Reaction>",
+											"horizontalAlignment": 0,
+											"verticalAlignment": 5,
+											"wordWrap": false
+										}
+									],
+									"visible": true,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 80,
+									"top": 406,
+									"width": 536.32861328125,
+									"height": 188,
+									"autoResize": false
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAFgc4aIXwRBQWk=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4aIXQQ5Btk="
+									},
+									"model": {
+										"$ref": "AAAAAAFgc4aIXAQ36Tk="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 0,
+									"top": -8,
+									"width": 10,
+									"height": 10,
+									"autoResize": false
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAFgc4aIXwRCJnk=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4aIXQQ5Btk="
+									},
+									"model": {
+										"$ref": "AAAAAAFgc4aIXAQ36Tk="
+									},
+									"visible": false,
+									"enabled": true,
+									"lineColor": "#000000",
+									"fillColor": "#ffffff",
+									"fontColor": "#000000",
+									"font": "Arial;13;0",
+									"showShadow": true,
+									"containerChangeable": false,
+									"containerExtending": false,
+									"left": 0,
+									"top": -8,
+									"width": 10,
+									"height": 10,
+									"autoResize": false
+								}
+							],
+							"visible": true,
+							"enabled": true,
+							"lineColor": "#000000",
+							"fillColor": "#ffffff",
+							"fontColor": "#000000",
+							"font": "Arial;13;0",
+							"showShadow": true,
+							"containerChangeable": true,
+							"containerExtending": false,
+							"left": 80,
+							"top": 328,
+							"width": 536.32861328125,
+							"height": 312,
+							"autoResize": false,
+							"stereotypeDisplay": "label",
+							"showVisibility": true,
+							"showNamespace": false,
+							"showProperty": true,
+							"showType": true,
+							"nameCompartment": {
+								"$ref": "AAAAAAFgc4aIXgQ64ko="
+							},
+							"wordWrap": false,
+							"suppressAttributes": false,
+							"suppressOperations": false,
+							"suppressReceptions": true,
+							"showMultiplicity": true,
+							"showOperationSignature": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAFgc4aIXgQ/98Y="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAFgc4aIXgRA4NQ="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAFgc4aIXwRBQWk="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAFgc4aIXwRCJnk="
+							}
 						}
 					]
 				},
@@ -775,6 +1502,695 @@
 									"isStatic": false,
 									"isLeaf": false,
 									"type": "string",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "return"
+								}
+							],
+							"concurrency": "sequential",
+							"isQuery": false,
+							"isAbstract": false
+						}
+					],
+					"isAbstract": false,
+					"isFinalSpecialization": false,
+					"isLeaf": false,
+					"isActive": false
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "AAAAAAFgc4aIXAQ36Tk=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "TaskManagementSystem",
+					"visibility": "public",
+					"attributes": [
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFgc4bAQARhOHw=",
+							"_parent": {
+								"$ref": "AAAAAAFgc4aIXAQ36Tk="
+							},
+							"name": "_accountRepository",
+							"visibility": "private",
+							"isStatic": false,
+							"isLeaf": false,
+							"type": "AccountRespository",
+							"isReadOnly": false,
+							"isOrdered": false,
+							"isUnique": false,
+							"isDerived": false,
+							"aggregation": "none",
+							"isID": false
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFgc4coyARoKTI=",
+							"_parent": {
+								"$ref": "AAAAAAFgc4aIXAQ36Tk="
+							},
+							"name": "_newsItemRepository",
+							"visibility": "private",
+							"isStatic": false,
+							"isLeaf": false,
+							"type": "NewsItemRepository",
+							"isReadOnly": false,
+							"isOrdered": false,
+							"isUnique": false,
+							"isDerived": false,
+							"aggregation": "none",
+							"isID": false
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFgc4eJfgRv2+Q=",
+							"_parent": {
+								"$ref": "AAAAAAFgc4aIXAQ36Tk="
+							},
+							"name": "_reactionRepository",
+							"visibility": "private",
+							"isStatic": false,
+							"isLeaf": false,
+							"type": "ReactionRepository",
+							"isReadOnly": false,
+							"isOrdered": false,
+							"isUnique": false,
+							"isDerived": false,
+							"aggregation": "none",
+							"isID": false
+						}
+					],
+					"operations": [
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFgc4gQ3gR4qxk=",
+							"_parent": {
+								"$ref": "AAAAAAFgc4aIXAQ36Tk="
+							},
+							"name": "TaskManagementSystem",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc4h0ZQR/Fhw=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4gQ3gR4qxk="
+									},
+									"name": "connectionString",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "String",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "in"
+								}
+							],
+							"concurrency": "sequential",
+							"isQuery": false,
+							"isAbstract": false
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFgc4h0swSBymU=",
+							"_parent": {
+								"$ref": "AAAAAAFgc4aIXAQ36Tk="
+							},
+							"name": "CreateReaction",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc4mhnASJnBc=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4h0swSBymU="
+									},
+									"name": "accountId",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "Int",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "in"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc4n05QSMoN4=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4h0swSBymU="
+									},
+									"name": "newsItemId",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "Int",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "in"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc4o1uwSO1ak=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4h0swSBymU="
+									},
+									"name": "text",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "String",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "in"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc4p/UASTZ84=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4h0swSBymU="
+									},
+									"name": "reactionId",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "Int",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"defaultValue": "0",
+									"direction": "in"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc4wglAS9RKM=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4h0swSBymU="
+									},
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "Boolean",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "return"
+								}
+							],
+							"concurrency": "sequential",
+							"isQuery": false,
+							"isAbstract": false
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFgc4sXegSZ3v4=",
+							"_parent": {
+								"$ref": "AAAAAAFgc4aIXAQ36Tk="
+							},
+							"name": "AddReaction",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc4tRWwSgHqQ=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4sXegSZ3v4="
+									},
+									"name": "reaction",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "Reaction",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "in"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc4v4vgS6wA0=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4sXegSZ3v4="
+									},
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "Boolean",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "return"
+								}
+							],
+							"concurrency": "sequential",
+							"isQuery": false,
+							"isAbstract": false
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFgc4tb3QSi6zw=",
+							"_parent": {
+								"$ref": "AAAAAAFgc4aIXAQ36Tk="
+							},
+							"name": "CreateNewsItem",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc4uoFQSpGlw=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4tb3QSi6zw="
+									},
+									"name": "subject",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "String",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "in"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc4uoFQSqrPo=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4tb3QSi6zw="
+									},
+									"name": "text",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "String",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "in"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc4uoFQSr6BM=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4tb3QSi6zw="
+									},
+									"name": "active",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "Boolean",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "in"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc4vqxgS30HU=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4tb3QSi6zw="
+									},
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "Boolean",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "return"
+								}
+							],
+							"concurrency": "sequential",
+							"isQuery": false,
+							"isAbstract": false
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFgc4uotgSvckA=",
+							"_parent": {
+								"$ref": "AAAAAAFgc4aIXAQ36Tk="
+							},
+							"name": "AllNewsItems",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc4yRlgTBBzY=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4uotgSvckA="
+									},
+									"name": "onlyActive",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "Boolean",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"defaultValue": "true",
+									"direction": "in"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc4yRlgTCyVM=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4uotgSvckA="
+									},
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "IEnumerable<NewsItem>",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "return"
+								}
+							],
+							"concurrency": "sequential",
+							"isQuery": false,
+							"isAbstract": false
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFgc4ySKQTFLTA=",
+							"_parent": {
+								"$ref": "AAAAAAFgc4aIXAQ36Tk="
+							},
+							"name": "AllNewsItems",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc42F1gTW8Qo=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4ySKQTFLTA="
+									},
+									"name": "date",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "DateTime",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "in"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc42F1gTXR4k=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4ySKQTFLTA="
+									},
+									"name": "onlyActive",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "Boolean",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"defaultValue": "true",
+									"direction": "in"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc42F1gTYXR4=",
+									"_parent": {
+										"$ref": "AAAAAAFgc4ySKQTFLTA="
+									},
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "IEnumerable<NewsItem>",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "return"
+								}
+							],
+							"concurrency": "sequential",
+							"isQuery": false,
+							"isAbstract": false
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFgc44ocgTxecw=",
+							"_parent": {
+								"$ref": "AAAAAAFgc4aIXAQ36Tk="
+							},
+							"name": "EditNewsItem",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc45ONQT4/ao=",
+									"_parent": {
+										"$ref": "AAAAAAFgc44ocgTxecw="
+									},
+									"name": "newsItem",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "NewsItem",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "in"
+								}
+							],
+							"concurrency": "sequential",
+							"isQuery": false,
+							"isAbstract": false
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFgc45dIQT6yOs=",
+							"_parent": {
+								"$ref": "AAAAAAFgc4aIXAQ36Tk="
+							},
+							"name": "AddNewsItem",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc5Cd9QUBaYU=",
+									"_parent": {
+										"$ref": "AAAAAAFgc45dIQT6yOs="
+									},
+									"name": "newsItem",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "NewsItem",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "in"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc5Cd9gUCGo8=",
+									"_parent": {
+										"$ref": "AAAAAAFgc45dIQT6yOs="
+									},
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "Boolean",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "return"
+								}
+							],
+							"concurrency": "sequential",
+							"isQuery": false,
+							"isAbstract": false
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFgc5CeiQUFjPo=",
+							"_parent": {
+								"$ref": "AAAAAAFgc4aIXAQ36Tk="
+							},
+							"name": "GetNewsItemById",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc5SmVwUN1R4=",
+									"_parent": {
+										"$ref": "AAAAAAFgc5CeiQUFjPo="
+									},
+									"name": "id",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "Int",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "in"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc5SmVwUOPLQ=",
+									"_parent": {
+										"$ref": "AAAAAAFgc5CeiQUFjPo="
+									},
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "NewsItem",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "return"
+								}
+							],
+							"concurrency": "sequential",
+							"isQuery": false,
+							"isAbstract": false
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFgc5TCSgURrwQ=",
+							"_parent": {
+								"$ref": "AAAAAAFgc4aIXAQ36Tk="
+							},
+							"name": "UpdateNewsItem",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc5UNqwUYG+I=",
+									"_parent": {
+										"$ref": "AAAAAAFgc5TCSgURrwQ="
+									},
+									"name": "newsItem",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "NewsItem",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "in"
+								}
+							],
+							"concurrency": "sequential",
+							"isQuery": false,
+							"isAbstract": false
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFgc5UODwUaUUQ=",
+							"_parent": {
+								"$ref": "AAAAAAFgc4aIXAQ36Tk="
+							},
+							"name": "GetAllReactionsFromNewsItemFormatted",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc5V0sQUhZfU=",
+									"_parent": {
+										"$ref": "AAAAAAFgc5UODwUaUUQ="
+									},
+									"name": "newsItem",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "NewsItem",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "in"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc5WllQUk98k=",
+									"_parent": {
+										"$ref": "AAAAAAFgc5UODwUaUUQ="
+									},
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "IEnumerable<Reaction>",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "return"
+								}
+							],
+							"concurrency": "sequential",
+							"isQuery": false,
+							"isAbstract": false
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFgc5Wl4wUmzms=",
+							"_parent": {
+								"$ref": "AAAAAAFgc4aIXAQ36Tk="
+							},
+							"name": "GetAllReactionsFromNewsItemFormatted",
+							"visibility": "public",
+							"isStatic": false,
+							"isLeaf": false,
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc57C8QUuTik=",
+									"_parent": {
+										"$ref": "AAAAAAFgc5Wl4wUmzms="
+									},
+									"name": "newsItemId",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "Integer",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "in"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFgc57C8QUvDrU=",
+									"_parent": {
+										"$ref": "AAAAAAFgc5Wl4wUmzms="
+									},
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "IEnumerable<Reaction>",
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
