@@ -39,6 +39,14 @@ SQL: group by
 
 SELECT a.newsItemId, count(*) FROM [bram].[dbo].[Reaction] as a GROUP BY (a.newsItemId)
 
-Deze telt het aantal tags voor een nieuwsbericht
+Deze telt het aantal reacties voor een nieuwsbericht
+
+__________________________________________________________________
+
+SQL: group by and having
+
+SELECT a.newsItemId, count(*) FROM [bram].[dbo].[Reaction] as a GROUP BY (a.newsItemId) HAVING count(*) > 5 
+
+Deze telt het aantal reacties voor een nieuwsbericht en laat alleen zien wanneer ze hoger dan 5 zijn
 
 __________________________________________________________________

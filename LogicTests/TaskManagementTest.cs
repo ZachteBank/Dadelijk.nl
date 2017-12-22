@@ -31,15 +31,21 @@ namespace LogicTests
         }
 
         [Fact]
-        private void AddNewsItemNoSubject()
+        private void AddNewsItemWithSubjectNull()
         {
             var newsItem = new NewsItem(){Subject = null, Text = "wauw", Active = false};
             Assert.Throws<ArgumentNullException>(() => _tms.AddNewsItem(newsItem));
         }
         [Fact]
-        private void AddNewsItemWithoutText()
+        private void AddNewsItemWithTextNull()
         {
             Assert.Throws<ArgumentNullException>(() => new NewsItem() { Subject = "wauw", Text = null, Active = false });
+        }
+        [Fact]
+        private void AddNewsItemWithTextNotSet()
+        {
+            var newsItem = new NewsItem() {Subject = "wauw", Text = "toch een text", Active = false};
+            Assert.Throws<ArgumentNullException>(() => _tms.AddNewsItem(newsItem));
         }
         [Fact]
         private void AddNewsItemWithId()
