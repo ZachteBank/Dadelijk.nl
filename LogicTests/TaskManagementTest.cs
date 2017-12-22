@@ -44,7 +44,7 @@ namespace LogicTests
         [Fact]
         private void AddNewsItemWithTextNotSet()
         {
-            var newsItem = new NewsItem() {Subject = "wauw", Text = "toch een text", Active = false};
+            var newsItem = new NewsItem() {Subject = "wauw",  Active = false};
             Assert.Throws<ArgumentNullException>(() => _tms.AddNewsItem(newsItem));
         }
         [Fact]
