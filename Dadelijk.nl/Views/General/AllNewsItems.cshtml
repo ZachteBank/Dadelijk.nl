@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Models.NewsItem>
+﻿@model Dadelijk.nl.ViewModels.NewsItemsOfDayAndRecent
 
 @{
     ViewData["Title"] = "Home Page";
@@ -11,7 +11,6 @@
 
 
 @section Content{
-
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
@@ -19,7 +18,7 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                @foreach (var item in Model)
+                @foreach (var item in Model.OfDay)
                 {
                     <div class="col-md-12 alignSpanVerticalMiddle"><span><small>@(item.DateUpdated == null ? item.DateCreated.ToString("t") : item.DateUpdated.Value.ToString("t"))</small> - </span><span class="newsItemListItem"><a asp-controller="General" asp-action="NewsItem" asp-route-id="@item.Id" asp-route-subject="@item.SubjectUrl">@item.Subject</a></span></div>
                 }
@@ -37,4 +36,21 @@
             </div>
         </div>
     </div>
+    
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h4>Meest recente nieuws berichten</h4>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            @foreach (var item in Model.Recent)
+                {
+                <div class="col-md-12 alignSpanVerticalMiddle"><span><small>@(item.DateUpdatedOrCreated.ToString("t"))</small> - </span><span class="newsItemListItem"><a asp-controller="General" asp-action="NewsItem" asp-route-id="@item.Id" asp-route-subject="@item.SubjectUrl">@item.Subject</a></span></div>
+            }
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
 }

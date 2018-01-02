@@ -28,7 +28,11 @@ namespace Dadelijk.nl.Controllers
             dateTime = year == 0 ? DateTime.Today : new DateTime(year, month, day);
 
             ViewBag.Date = dateTime.Ticks;
-            var newsItems = _tms.AllNewsItems(dateTime);
+            var newsItems = new NewsItemsOfDayAndRecent
+            {
+                OfDay = _tms.AllNewsItems(dateTime),
+                Recent = _tms.AllNewsItems()
+            };
             return View(newsItems);
         }
 
