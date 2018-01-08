@@ -15,6 +15,7 @@ namespace Dadelijk.nl.Controllers
         //CONNECTION STRING: Data Source=volunteersapp.c153q9deg6j1.us-east-1.rds.amazonaws.com;Initial Catalog=bram;User id=App_bF72Esbab9RD;Password=Gq96h8MhY6JckP9ESScs3SfD;
         private UserManagementSystem _ums = new UserManagementSystem(Startup.ConnectionString);
         private TaskManagementSystem _tms = new TaskManagementSystem(Startup.ConnectionString);
+        private TweakersNewsSystem _tns = new TweakersNewsSystem();
 
         public IActionResult Index()
         {
@@ -31,7 +32,8 @@ namespace Dadelijk.nl.Controllers
             var newsItems = new NewsItemsOfDayAndRecent
             {
                 OfDay = _tms.AllNewsItems(dateTime),
-                Recent = _tms.AllNewsItems()
+                Recent = _tms.AllNewsItems(),
+                RemoteItems = _tns.GetAllItems()
             };
             return View(newsItems);
         }

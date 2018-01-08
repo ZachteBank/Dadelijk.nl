@@ -37,20 +37,50 @@
         </div>
     </div>
     
-<div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="x_panel">
-        <div class="x_title">
-            <h4>Meest recente nieuws berichten</h4>
-            <div class="clearfix"></div>
-        </div>
-        <div class="x_content">
-            @foreach (var item in Model.Recent)
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h4>Meest recente nieuws berichten</h4>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                @foreach (var item in Model.Recent)
                 {
-                <div class="col-md-12 alignSpanVerticalMiddle"><span><small>@(item.DateUpdatedOrCreated.ToString("t"))</small> - </span><span class="newsItemListItem"><a asp-controller="General" asp-action="NewsItem" asp-route-id="@item.Id" asp-route-subject="@item.SubjectUrl">@item.Subject</a></span></div>
-            }
-            <div class="clearfix"></div>
+                    <div class="col-md-12 alignSpanVerticalMiddle"><span><small>@(item.DateUpdatedOrCreated.ToString("t"))</small> - </span><span class="newsItemListItem"><a asp-controller="General" asp-action="NewsItem" asp-route-id="@item.Id" asp-route-subject="@item.SubjectUrl">@item.Subject</a></span></div>
+                }
+                <div class="clearfix"></div>
+            </div>
         </div>
     </div>
-</div>
+    
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h4>Meest recente nieuws berichten <span>- <a href="https://tweakers.net">tweakers.net</a></span></h4>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                @{
+                    DateTime currentDay = DateTime.Today;
+                    <div class="col-md-12">
+                    <h2>@currentDay.ToString("D")</h2>
+                    </div>
+                }
+                @foreach (var item in Model.RemoteItems)
+                {
+                    if (currentDay.Date != item.DateTime.Date)
+                    {
+                        currentDay = item.DateTime;
+                        <div class="col-md-12">
+                            <h2>@currentDay.ToString("D")</h2>
+                        </div>
+                    }
+                    <div class="col-md-11 col-md-offset-1 alignSpanVerticalMiddle"><span><small>@(item.DateTime.ToString("t"))</small> - </span><span class="newsItemListItem"><a target="_blank" href="@item.Url">@item.Title</a></span>
+                    </div>
+                }
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
 
 }

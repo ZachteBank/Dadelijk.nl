@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Reflection.PortableExecutable;
 using DataAccess;
@@ -14,7 +15,7 @@ namespace Logic
 {
     public class TweakersNewsSystem: Remote.IBase
     {
-        private string _url = "https://tweakers.net/feeds/nieuws.json?jsonp=callback";
+        private string _url = "https://tweakers.net/feeds/nieuws.json";
         private string json;
 
         public TweakersNewsSystem()
@@ -37,7 +38,7 @@ namespace Logic
                 };
                 newsItems.Add(newsItem);
             }
-            return newsItems;
+            return newsItems.OrderByDescending(x => x.DateTime);
 
         }
 
