@@ -22,7 +22,7 @@ namespace LogicTests
         public void TestDeleteAccount()
         {
             var account = _ums.GetAccountByEmail(email);
-            if (account != null)
+            if (account == null)
             {
                 _ums.Register(email, "testPassword", "testUsername");
                 account = _ums.GetAccountByEmail(email);

@@ -112,7 +112,7 @@ namespace DataAccess.Repositories
             {
                 var command = new SqlCommand(null, connection)
                 {
-                    CommandText = @"DELETE FROM FROM Account WHERE id=@id"
+                    CommandText = @"DELETE FROM Account WHERE id=@id"
                 };
 
                 command.Parameters.Add(new SqlParameter("id", id));

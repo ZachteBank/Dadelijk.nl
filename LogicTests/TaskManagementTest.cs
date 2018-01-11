@@ -60,7 +60,7 @@ namespace LogicTests
             var newsItem = _addNewsItem();
             var newsItemsCount = _tms.AllNewsItems(false).Count();
             _tms.DeleteNewsItem(newsItem);
-            Assert.True(_tms.AllNewsItems(false).Count() < newsItemsCount);
+            Assert.True(_tms.AllNewsItems(false).Count() == newsItemsCount-1);
         }
 
         private NewsItem _addNewsItem()
