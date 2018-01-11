@@ -58,5 +58,10 @@ namespace Logic
             var salt = BCrypt.Net.BCrypt.GenerateSalt();
             return BCrypt.Net.BCrypt.HashPassword(password, salt);
         }
+
+        public void DeleteAccount(int id)
+        {
+            _accountRespository.DeleteAccountById(id);
+        }
     }
 }

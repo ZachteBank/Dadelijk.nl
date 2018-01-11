@@ -84,7 +84,7 @@ namespace DataAccess.Repositories
                 var command = new SqlCommand(null, connection);
                 command.CommandText =
                     @"INSERT INTO Account(email, passHash, accountTypeId, username) VALUES
-                (@email, @password, @accountTypeId);
+                (@email, @password, @accountTypeId, @username);
                 SELECT SCOPE_IDENTITY() AS Id";
 
 
@@ -106,6 +106,20 @@ namespace DataAccess.Repositories
             }
         }
 
+        public void DeleteAccountById(int id)
+        {
+            using (var connection = GetConnection())
+            {
+                var command = new SqlCommand(null, connection)
+                {
+                    CommandText = @"DELETE FROM FROM Account WHERE id=@id"
+                };
+
+                command.Parameters.Add(new SqlParameter("id", id));
+
+                command.ExecuteNonQuery();
+            }
+        }
 
         public Account GetAccountById(int id)
         {
